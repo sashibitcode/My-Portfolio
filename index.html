@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shashikant Raj | Cinematic 3D Portfolio - Data Analyst & AI</title>
+  <meta name="description" content="Cinematic 3D Portfolio of Shashikant Raj, Data Analyst specializing in Python, SQL, Predictive Analytics, and AI solutions." />
+  <meta name="keywords" content="Shashikant Raj, Data Analyst, Portfolio, 3D Portfolio, Python, SQL, Power BI, Machine Learning, Three.js" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>" />
+  <script type="module" crossorigin src="./assets/index-DROrwzUs.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-rOYjZc9v.css">
+</head>
+<body>
+  <!-- 3D Three.js Fullscreen Canvas Container -->
+  <div id="webgl-container"></div>
+
+  <!-- Realtime Act / Subtitle Indicator -->
+  <div id="cinema-act-badge">ACT I: THE AWAKENING</div>
+
+  <!-- Global Progress Tracker -->
+  <div id="scroll-progress-bar">
+    <div id="scroll-progress-fill"></div>
+  </div>
+
+  <!-- Top Navigation HUD -->
+  <header class="hud-header">
+    <a href="#scene-hero" class="brand-logo" id="brand-logo">
+      <div class="brand-dot"></div>
+      <span class="brand-name">SHASHIKANT RAJ</span>
+    </a>
+
+    <nav>
+      <ul class="hud-nav-links">
+        <li><button class="hud-link-btn" data-target="0">Hero</button></li>
+        <li><button class="hud-link-btn" data-target="1">About</button></li>
+        <li><button class="hud-link-btn" data-target="2">Skills</button></li>
+        <li><button class="hud-link-btn" data-target="3">Projects</button></li>
+        <li><button class="hud-link-btn" data-target="4">Experience</button></li>
+        <li><button class="hud-link-btn" data-target="5">Contact</button></li>
+      </ul>
+    </nav>
+
+    <div class="hud-controls">
+      <!-- Audio Toggle Button -->
+      <button id="btn-toggle-audio" class="hud-pill-btn" title="Toggle Cinematic Soundscape">
+        <span class="sound-waves">
+          <span class="sound-bar"></span>
+          <span class="sound-bar"></span>
+          <span class="sound-bar"></span>
+        </span>
+        <span id="audio-btn-label">AUDIO: OFF</span>
+      </button>
+
+      <!-- Appearance / Theme Toggle (Dark / Light Mode) -->
+      <button id="btn-toggle-theme" class="hud-pill-btn" title="Toggle Light / Dark Appearance">
+        <span id="theme-btn-icon">🌙</span>
+        <span id="theme-btn-label">DARK</span>
+      </button>
+
+      <!-- GitHub Profile Link -->
+      <a href="https://github.com/sashibitcode" id="btn-header-github" target="_blank" rel="noopener noreferrer" class="hud-pill-btn" title="View GitHub Profile" style="text-decoration: none;">
+        <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+        <span id="github-btn-label">GITHUB</span>
+      </a>
+
+      <!-- Resume Button -->
+      <button id="btn-view-resume" class="hud-pill-btn" title="Inspect Resume">
+        <span>📄</span>
+        <span>RESUME</span>
+      </button>
+
+      <!-- Mobile Menu Trigger Button -->
+      <button id="btn-mobile-menu" class="hud-pill-btn mobile-menu-trigger" title="Open Navigation Menu">
+        <span>☰</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer Overlay -->
+  <div id="mobile-nav-drawer" class="mobile-nav-drawer">
+    <div class="mobile-nav-backdrop" id="mobile-nav-backdrop"></div>
+    <div class="mobile-nav-panel">
+      <div class="mobile-nav-top">
+        <div class="brand-logo">
+          <div class="brand-dot"></div>
+          <span class="brand-name">SHASHIKANT RAJ</span>
+        </div>
+        <button id="btn-close-mobile-nav" class="mobile-close-btn" title="Close Menu">✕</button>
+      </div>
+
+      <nav class="mobile-nav-content">
+        <ul class="mobile-nav-list">
+          <li><button class="mobile-nav-link" data-target="0">01 // HERO</button></li>
+          <li><button class="mobile-nav-link" data-target="1">02 // ABOUT</button></li>
+          <li><button class="mobile-nav-link" data-target="2">03 // SKILLS</button></li>
+          <li><button class="mobile-nav-link" data-target="3">04 // PROJECTS</button></li>
+          <li><button class="mobile-nav-link" data-target="4">05 // EXPERIENCE</button></li>
+          <li><button class="mobile-nav-link" data-target="5">06 // CONTACT</button></li>
+        </ul>
+      </nav>
+
+      <div class="mobile-nav-bottom">
+        <a href="https://github.com/sashibitcode" target="_blank" rel="noopener noreferrer" class="hud-pill-btn" style="width: 100%; justify-content: center; margin-bottom: 12px; padding: 12px 16px; text-decoration: none;">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          <span style="margin-left: 8px;">GITHUB PROFILE</span>
+        </a>
+        <button id="btn-mobile-audio" class="hud-pill-btn" style="width: 100%; justify-content: center; margin-bottom: 12px; padding: 12px 16px;">
+          <span class="sound-waves">
+            <span class="sound-bar"></span>
+            <span class="sound-bar"></span>
+            <span class="sound-bar"></span>
+          </span>
+          <span id="mobile-audio-label">AUDIO: OFF</span>
+        </button>
+        <button id="btn-mobile-resume" class="btn-cyber-primary" style="width: 100%; justify-content: center;">
+          <span>VIEW RESUME</span>
+          <span>📄</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Scrollable Storyboard Sections -->
+  <main id="scroll-container">
+    
+    <!-- ACT 1: HERO (100VH CINEMATIC SHOWCASE) -->
+    <section id="scene-hero" class="scene-section scene-hero-100vh">
+      <!-- 100vh Cinematic Character Stage & Depth Layers -->
+      <div class="hero-cinematic-stage" id="hero-cinematic-stage">
+        <!-- Atmospheric Neon Cyan & Purple Aura -->
+        <div class="hero-cyber-aura"></div>
+        
+        <!-- Dedicated Scroll Parallax & Dissolve Wrapper (Controlled by ScrollTrigger) -->
+        <div class="hero-scroll-wrapper" id="hero-scroll-wrapper">
+          <!-- High-Resolution Character Portrait (Controlled by Mouse Parallax) -->
+          <img src="./assets/shashikant_hero.png" alt="Shashikant Raj - Portrait" class="hero-cinematic-img" id="hero-cinematic-img" />
+        </div>
+        
+        <!-- Multi-Directional Deep Space Seamless Dissolve Vignette -->
+        <div class="hero-dissolve-vignette"></div>
+      </div>
+
+      <div class="hero-grand-showcase" id="hero-content-wrapper">
+        <!-- Left Space reserved for 100vh Portrait Presence -->
+        <div class="hero-portrait-spacer"></div>
+
+        <!-- Sleek Floating Hero Actions & Socials -->
+        <div class="hero-content-col">
+          <div class="hero-role-badge">// DATA ANALYST & AI/ML SPECIALIST</div>
+          
+          <h1 class="hero-name-title">
+            <span class="glow-name">SHASHIKANT RAJ</span>
+          </h1>
+
+          <div class="hero-role-pill">DATA ANALYST | DATA ANALYTICS & AI/ML</div>
+          
+          <p class="hero-subtitle">
+            Transforming complex commercial datasets into high-conviction decisions, predictive ML models, and executive Power BI intelligence.
+          </p>
+
+          <!-- Quick Metric Badges -->
+          <div class="hero-quick-metrics">
+            <div class="quick-metric-item">
+              <span class="quick-metric-val">$2.29M+</span>
+              <span class="quick-metric-lbl">Data Analyzed</span>
+            </div>
+            <div class="quick-metric-item">
+              <span class="quick-metric-val">$286K+</span>
+              <span class="quick-metric-lbl">Profit Identified</span>
+            </div>
+            <div class="quick-metric-item">
+              <span class="quick-metric-val">300+</span>
+              <span class="quick-metric-lbl">LeetCode & SQL</span>
+            </div>
+          </div>
+
+          <div class="hero-cta-row">
+            <button class="btn-cyber-primary" id="btn-hero-explore">
+              <span>EXPLORE MISSIONS</span>
+              <span>↓</span>
+            </button>
+            <button class="btn-cyber-secondary" id="btn-hero-resume">
+              <span>VIEW RESUME</span>
+              <span>📄</span>
+            </button>
+            <a href="#scene-contact" class="btn-cyber-outline" id="btn-hero-contact">
+              <span>CONTACT</span>
+              <span>✉</span>
+            </a>
+          </div>
+
+          <div class="hero-socials">
+            <a href="https://www.linkedin.com/in/sashikant-raj/" target="_blank" rel="noopener noreferrer" class="social-icon-link" title="LinkedIn Profile">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            </a>
+            <a href="https://github.com/sashibitcode" target="_blank" rel="noopener noreferrer" class="social-icon-link" title="GitHub Profile">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            </a>
+            <a href="https://leetcode.com/u/sashibitcode/" target="_blank" rel="noopener noreferrer" class="social-icon-link" title="LeetCode Profile">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .666-1.607 2.6 2.6 0 0 1 .388-.434l3.779-4.049 4.907-5.356a1.388 1.388 0 0 0-.978-2.387zM16.48 7.37a1.382 1.382 0 0 0-.98.406l-4.706 4.707a1.385 1.385 0 0 0 1.959 1.958l4.706-4.706a1.38 1.38 0 0 0-.979-2.365z"/></svg>
+            </a>
+            <a href="mailto:shashiverma7779@gmail.com" class="social-icon-link" title="Direct Email">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACT 2: ABOUT / DOSSIER -->
+    <section id="scene-about" class="scene-section">
+      <div class="scene-inner">
+        <div class="section-header">
+          <div class="section-tag">// ACT II: DOSSIER</div>
+          <h2 class="section-title">THE DATA ARCHITECT</h2>
+          <p class="section-desc">Uncovering hidden patterns within noisy data streams to build intelligent, predictive analytics engines.</p>
+        </div>
+
+        <div class="about-grid">
+          <div class="terminal-card">
+            <div class="terminal-header">
+              <div class="terminal-dots">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+              </div>
+              <div class="terminal-title">TERMINAL // SYSTEM_DOSSIER.LOG</div>
+            </div>
+            <div class="terminal-body">
+              <p>
+                Data Analyst and Technology Enthusiast passionate about transforming complex datasets into actionable business intelligence through analytics, Python, SQL, Excel, and interactive dashboards. Deeply focused on solving real-world challenges, discovering revenue growth corridors, and engineering robust analytical architectures.
+              </p>
+              <div class="dossier-items">
+                <div class="dossier-item">
+                  <div class="dossier-label">DEGREE</div>
+                  <div class="dossier-val">B.Tech Computer Science</div>
+                </div>
+                <div class="dossier-item">
+                  <div class="dossier-label">INSTITUTION</div>
+                  <div class="dossier-val">Jagannath University</div>
+                </div>
+                <div class="dossier-item">
+                  <div class="dossier-label">LOCATION</div>
+                  <div class="dossier-val">Jaipur, Rajasthan, India</div>
+                </div>
+                <div class="dossier-item">
+                  <div class="dossier-label">TIMELINE</div>
+                  <div class="dossier-val">Jul 2023 – Expected Jul 2027</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="metrics-stack">
+            <div class="metric-box">
+              <div class="metric-number">$2.29M+</div>
+              <div class="metric-title">Commercial Data Analyzed</div>
+              <div class="metric-sub">Superstore E-commerce Performance</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-number">$286K+</div>
+              <div class="metric-title">Profit Optimization Identified</div>
+              <div class="metric-sub">12.47% Profit Margin Insights</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-number">300+</div>
+              <div class="metric-title">SQL & Python Queries Solved</div>
+              <div class="metric-sub">Algorithmic Problem Solving</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACT 3: SKILLS ARSENAL -->
+    <section id="scene-skills" class="scene-section">
+      <div class="scene-inner">
+        <div class="section-header">
+          <div class="section-tag">// ACT III: CAPABILITIES</div>
+          <h2 class="section-title">THE ANALYTICS ARSENAL</h2>
+          <p class="section-desc">Technical weaponry engineered for end-to-end data pipelines, statistical modeling, and interactive reporting.</p>
+        </div>
+
+        <div class="skills-container" id="skills-grid">
+          <!-- Populated dynamically via JS from portfolioData -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ACT 4: PROJECTS RUNWAY -->
+    <section id="scene-projects" class="scene-section">
+      <div class="scene-inner">
+        <div class="section-header">
+          <div class="section-tag">// ACT IV: MISSIONS</div>
+          <h2 class="section-title">FEATURED MISSION LOG</h2>
+          <p class="section-desc">Key telemetry and analytical solutions engineered to extract maximum business clarity from complex datasets.</p>
+        </div>
+
+        <div class="projects-grid" id="projects-grid">
+          <!-- Populated dynamically via JS from portfolioData -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ACT 5: EXPERIENCE & CERTS -->
+    <section id="scene-experience" class="scene-section">
+      <div class="scene-inner">
+        <div class="section-header">
+          <div class="section-tag">// ACT V: EXPEDITIONS</div>
+          <h2 class="section-title">EXPEDITION & CREDENTIALS</h2>
+          <p class="section-desc">Applied industry experience and recognized technical certifications.</p>
+        </div>
+
+        <div class="exp-cert-grid">
+          <div class="timeline-card">
+            <h3 style="font-family: var(--font-display); font-size: 1.1rem; color: var(--primary-cyan); margin-bottom: 24px;">
+              // WORK EXPERIENCE
+            </h3>
+            <div class="timeline-item">
+              <div class="timeline-marker"></div>
+              <div class="timeline-role">AI & Data Science Intern</div>
+              <div class="timeline-company">Knowx Innovations Pvt. Ltd.</div>
+              <div class="timeline-period">July 2026 – August 2026</div>
+              <p class="timeline-desc">
+                Analyzed and prepared large-scale datasets using Python, Pandas, and NumPy to power AI/ML solutions. Engineered a real-time Crop Advisory solution applying Machine Learning classification and Retrieval-Augmented Generation (RAG) techniques to generate practical recommendations.
+              </p>
+              <div class="project-tags">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Pandas</span>
+                <span class="tech-tag">Scikit-learn</span>
+                <span class="tech-tag">TensorFlow</span>
+                <span class="tech-tag">RAG</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="certs-stack">
+            <h3 style="font-family: var(--font-display); font-size: 1.1rem; color: var(--accent-magenta); margin-bottom: 8px;">
+              // CERTIFICATIONS
+            </h3>
+
+            <div class="cert-card">
+              <div class="cert-icon">📜</div>
+              <div>
+                <div class="cert-title">PCAP: Programming Essentials in Python</div>
+                <div class="cert-issuer">Cisco Networking Academy & OpenEDG</div>
+                <div class="cert-date">Issued July 2024</div>
+              </div>
+            </div>
+
+            <div class="cert-card">
+              <div class="cert-icon">📊</div>
+              <div>
+                <div class="cert-title">Data Visualisation: Effective Insights</div>
+                <div class="cert-issuer">Forage</div>
+                <div class="cert-date">Issued July 2025</div>
+              </div>
+            </div>
+
+            <div class="cert-card">
+              <div class="cert-icon">⚡</div>
+              <div>
+                <div class="cert-title">Introduction to Generative AI Studio</div>
+                <div class="cert-issuer">Google Cloud / AI Studio</div>
+                <div class="cert-date">Issued July 2025</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACT 6: CONTACT BEACON -->
+    <section id="scene-contact" class="scene-section">
+      <div class="scene-inner">
+        <div class="section-header">
+          <div class="section-tag">// ACT VI: TRANSMISSION</div>
+          <h2 class="section-title">SUB-SPACE UPLINK</h2>
+          <p class="section-desc">Initiate a secure communication link. Available for high-impact Data Analyst and AI engineering opportunities.</p>
+        </div>
+
+        <div class="contact-container">
+          <div class="contact-info-panel">
+            <h3 style="font-family: var(--font-display); font-size: 1.15rem; color: #fff; margin-bottom: 24px;">
+              DIRECT CHANNELS
+            </h3>
+
+            <a href="mailto:shashiverma7779@gmail.com" class="contact-item">
+              <div class="contact-icon-box">✉</div>
+              <div>
+                <div class="contact-label">EMAIL BEACON</div>
+                <div class="contact-val">shashiverma7779@gmail.com</div>
+              </div>
+            </a>
+
+            <a href="tel:+916204961091" class="contact-item">
+              <div class="contact-icon-box">✆</div>
+              <div>
+                <div class="contact-label">PHONE FREQUENCY</div>
+                <div class="contact-val">+91 6204961091</div>
+              </div>
+            </a>
+
+            <div class="contact-item">
+              <div class="contact-icon-box">📍</div>
+              <div>
+                <div class="contact-label">BASE STATION</div>
+                <div class="contact-val">Jaipur, Rajasthan, India</div>
+              </div>
+            </div>
+
+            <div style="margin-top: 36px; padding-top: 24px; border-top: 1px solid rgba(255, 255, 255, 0.08);">
+              <div class="contact-label" style="margin-bottom: 12px;">CONNECTED GRIDS</div>
+              <div class="hero-socials">
+                <a href="https://www.linkedin.com/in/sashikant-raj/" target="_blank" rel="noopener noreferrer" class="social-icon-link" title="LinkedIn">
+                  <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </a>
+                <a href="https://github.com/sashibitcode" target="_blank" rel="noopener noreferrer" class="social-icon-link" title="GitHub">
+                  <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                </a>
+                <a href="https://leetcode.com/u/sashibitcode/" target="_blank" rel="noopener noreferrer" class="social-icon-link" title="LeetCode">
+                  <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .666-1.607 2.6 2.6 0 0 1 .388-.434l3.779-4.049 4.907-5.356a1.388 1.388 0 0 0-.978-2.387zM16.48 7.37a1.382 1.382 0 0 0-.98.406l-4.706 4.707a1.385 1.385 0 0 0 1.959 1.958l4.706-4.706a1.38 1.38 0 0 0-.979-2.365z"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form-panel">
+            <h3 style="font-family: var(--font-display); font-size: 1.15rem; color: #fff; margin-bottom: 24px;">
+              TRANSMIT MESSAGE
+            </h3>
+
+            <form id="contact-form">
+              <div class="form-group">
+                <label class="form-label">YOUR NAME // IDENTITY</label>
+                <input type="text" id="sender-name" name="name" class="form-input" placeholder="Enter your full name" required />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">EMAIL ADDRESS // RETURN FREQUENCY</label>
+                <input type="email" id="sender-email" name="email" class="form-input" placeholder="name@domain.com" required />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">TRANSMISSION PAYLOAD // MESSAGE</label>
+                <textarea id="sender-message" name="message" class="form-textarea" placeholder="Describe project or analytical mission..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn-cyber-primary" style="width: 100%; justify-content: center;" id="btn-submit-form">
+                <span>SEND TRANSMISSION</span>
+                <span>⚡</span>
+              </button>
+              <div id="form-status" style="margin-top: 14px; font-size: 0.82rem; font-family: var(--font-mono); text-align: center; display: none;"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Telemetry -->
+    <footer class="footer-bar">
+      <div>DESIGNED & ENGINEERED FOR SHASHIKANT RAJ // CINEMATIC 3D ORCHESTRATION</div>
+      <div style="font-size: 0.75rem; margin-top: 4px; color: var(--text-dim);">
+        POWERED BY THREE.JS • GSAP SCROLLTRIGGER • LENIS • VITE
+      </div>
+    </footer>
+  </main>
+
+  <!-- Project Details Modal -->
+  <div class="modal-backdrop" id="project-modal">
+    <div class="modal-content">
+      <button class="modal-close-btn" id="btn-close-project-modal">✕</button>
+      <div id="modal-project-body">
+        <!-- Rendered dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Resume Preview Modal -->
+  <div class="modal-backdrop" id="resume-modal">
+    <div class="modal-content" style="max-width: 780px;">
+      <button class="modal-close-btn" id="btn-close-resume-modal">✕</button>
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+        <h3 style="font-family: var(--font-display); color: var(--primary-cyan); font-size: 1.2rem;">
+          SHASHIKANT RAJ // RESUME
+        </h3>
+        <a href="/assets/resume.png" download="Shashikant_Raj_Resume.png" class="btn-cyber-primary" style="padding: 8px 18px; font-size: 0.75rem;">
+          <span>DOWNLOAD IMAGE</span>
+          <span>⬇</span>
+        </a>
+      </div>
+      <img src="./assets/resume.png" alt="Shashikant Raj Resume" class="modal-resume-img" />
+    </div>
+  </div>
+
+</body>
+</html>
