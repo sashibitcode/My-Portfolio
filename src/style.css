@@ -439,59 +439,125 @@ body.theme-light .footer-bar {
 }
 
 /* =========================================================================
-   ACT 1: HERO GRAND 8K SHOWCASE
+   ACT 1: HERO 100VH CINEMATIC SHOWCASE (SEAMLESS DISSOLVE & PARALLAX)
    ========================================================================= */
-#scene-hero {
-  padding-top: 110px;
+.scene-hero-100vh {
+  height: 100vh !important;
+  min-height: 100vh !important;
+  max-height: 100vh !important;
+  padding: 0 !important;
+  position: relative !important;
+  overflow: hidden !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: var(--bg-dark);
+}
+
+/* 100vh Cinematic Character Stage */
+.hero-cinematic-stage {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 2;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Atmospheric Neon Cyan & Purple Aura (Breathing Backlight) */
+.hero-cyber-aura {
+  position: absolute;
+  top: 14%;
+  left: 6%;
+  width: 580px;
+  height: 580px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 240, 255, 0.28) 0%, rgba(139, 92, 246, 0.18) 45%, transparent 72%);
+  filter: blur(75px);
+  pointer-events: none;
+  z-index: 1;
+  animation: heroAuraPulse 7s ease-in-out infinite alternate;
+}
+
+@keyframes heroAuraPulse {
+  0% { transform: scale(0.92) translate(0, 0); opacity: 0.65; }
+  100% { transform: scale(1.18) translate(25px, 20px); opacity: 0.95; }
+}
+
+/* Dedicated Scroll Parallax & Dissolve Wrapper (Animated by ScrollTrigger) */
+.hero-scroll-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 2;
+  pointer-events: none;
+  transform-origin: center center;
+  will-change: transform, opacity;
+}
+
+/* High-Resolution Character Portrait with Organic Feathered Mask */
+.hero-cinematic-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60vw;
+  max-width: 950px;
+  height: 100vh;
+  max-height: 100vh;
+  object-fit: cover;
+  object-position: center top;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  filter: contrast(1.05) brightness(1.02);
+  z-index: 2;
+  /* Organic Elliptical Feathering: 100% Crisp Face, completely soft outer edges */
+  mask-image: radial-gradient(ellipse 72% 78% at 34% 36%, #000 35%, rgba(0,0,0,0.85) 54%, rgba(0,0,0,0.3) 76%, transparent 95%);
+  -webkit-mask-image: radial-gradient(ellipse 72% 78% at 34% 36%, #000 35%, rgba(0,0,0,0.85) 54%, rgba(0,0,0,0.3) 76%, transparent 95%);
+  transform-origin: center center;
+  will-change: transform;
+}
+
+/* Multi-Directional Seamless Dissolve Vignette (Zero Visible Cut/Border) */
+.hero-dissolve-vignette {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 3;
+  pointer-events: none;
+  background: 
+    /* Horizontal soft blend from left toward right (Shashikant Raj text area) */
+    linear-gradient(to right, transparent 20%, rgba(3, 7, 18, 0.4) 42%, rgba(3, 7, 18, 0.85) 58%, var(--bg-dark) 78%),
+    /* Vertical soft blend toward bottom (zero cut when scrolling down) */
+    linear-gradient(to bottom, transparent 65%, rgba(3, 7, 18, 0.65) 80%, var(--bg-dark) 96%),
+    /* Radial ambient soft fill */
+    radial-gradient(circle at 80% 50%, var(--bg-dark) 25%, transparent 65%);
 }
 
 .hero-grand-showcase {
   width: 100%;
-  max-width: 1280px;
+  max-width: 1380px;
+  height: 100vh;
   margin: 0 auto;
+  padding: 100px 48px 40px;
+  box-sizing: border-box;
   display: grid;
-  grid-template-columns: 440px 1fr;
-  gap: 56px;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 48px;
   align-items: center;
   position: relative;
   z-index: 5;
 }
 
-/* Left Column: 8K Professional Portrait Centerpiece */
-.hero-portrait-col {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-}
-
-.hero-portrait-frame {
-  position: relative;
+.hero-portrait-spacer {
   width: 100%;
-  max-width: 440px;
-  border-radius: 28px;
-  background: transparent;
-  border: none !important;
-  box-shadow: 0 0 60px rgba(0, 240, 255, 0.2), 0 25px 60px rgba(0, 0, 0, 0.9);
-  overflow: hidden;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
-}
-
-.hero-portrait-frame:hover {
-  transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 0 85px rgba(0, 240, 255, 0.4), 0 30px 80px rgba(0, 0, 0, 0.95);
-  border: none !important;
-}
-
-.hero-8k-img {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 3 / 4;
-  object-fit: cover;
-  display: block;
-  border-radius: 28px;
-  border: none !important;
-  outline: none !important;
+  height: 100%;
+  min-height: 200px;
+  pointer-events: none;
 }
 
 .portrait-glow-edge {
@@ -1581,22 +1647,117 @@ body.theme-light .footer-bar {
 
 /* Tablets & Small Laptops (<= 1024px) */
 @media (max-width: 1024px) {
+  .scene-hero-100vh {
+    height: auto !important;
+    min-height: 100vh !important;
+    max-height: none !important;
+    padding: 110px 24px 60px !important;
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 16px !important;
+    overflow: visible !important;
+  }
+  
+  .hero-cinematic-stage {
+    position: relative !important;
+    inset: auto !important;
+    width: 100% !important;
+    height: 310px !important;
+    min-height: 310px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    z-index: 2 !important;
+    margin: 0 0 10px 0 !important;
+    overflow: visible !important;
+    pointer-events: none !important;
+  }
+
+  .hero-cyber-aura {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    width: 310px !important;
+    height: 310px !important;
+    border-radius: 50% !important;
+    background: radial-gradient(circle, rgba(0, 240, 255, 0.4) 0%, rgba(139, 92, 246, 0.26) 48%, transparent 72%) !important;
+    filter: blur(50px) !important;
+    z-index: 1 !important;
+    pointer-events: none !important;
+  }
+
+  .hero-scroll-wrapper {
+    position: relative !important;
+    inset: auto !important;
+    width: 300px !important;
+    height: 300px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    z-index: 2 !important;
+    pointer-events: none !important;
+    transform-origin: center center !important;
+    will-change: transform, opacity !important;
+  }
+
+  .hero-cinematic-img {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    width: 300px !important;
+    height: 300px !important;
+    max-width: 300px !important;
+    max-height: 300px !important;
+    object-fit: cover !important;
+    object-position: center 12% !important;
+    opacity: 1 !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    filter: contrast(1.05) brightness(1.02) !important;
+    z-index: 2 !important;
+    mask-image: radial-gradient(ellipse 75% 82% at 50% 40%, #000 45%, rgba(0,0,0,0.85) 65%, transparent 96%) !important;
+    -webkit-mask-image: radial-gradient(ellipse 75% 82% at 50% 40%, #000 45%, rgba(0,0,0,0.85) 65%, transparent 96%) !important;
+    transform-origin: center center !important;
+    will-change: transform !important;
+  }
+
+  .hero-dissolve-vignette {
+    display: none !important;
+  }
+
   .hero-grand-showcase {
-    grid-template-columns: 1fr;
-    gap: 40px;
-    text-align: center;
+    position: relative !important;
+    z-index: 5 !important;
+    width: 100% !important;
+    max-width: 800px !important;
+    height: auto !important;
+    padding: 0 !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 16px !important;
   }
-  .hero-portrait-col {
-    justify-content: center;
+
+  .hero-portrait-spacer {
+    display: none !important;
   }
-  .hero-portrait-frame {
-    max-width: 360px;
-    margin: 0 auto;
-  }
+
   .hero-content-col {
-    align-items: center;
-    text-align: center;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 12px !important;
+    width: 100% !important;
   }
+
   .hero-role-pill {
     align-self: center;
   }
@@ -1694,6 +1855,22 @@ body.theme-light .footer-bar {
     display: none !important;
   }
 
+  /* GitHub button: Icon-only on mobile */
+  #btn-header-github {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    padding: 0 !important;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+  }
+
+  #github-btn-label {
+    display: none !important;
+  }
+
   /* Mobile menu hamburger button */
   .mobile-menu-trigger {
     width: 38px;
@@ -1718,135 +1895,207 @@ body.theme-light .footer-bar {
     min-height: auto;
   }
 
-  #scene-hero {
-    padding-top: 72px;
+  .scene-hero-100vh {
+    min-height: 100vh !important;
+    height: auto !important;
+    max-height: none !important;
+    padding: 76px 16px 40px !important;
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 8px !important;
+    overflow: visible !important;
   }
 
-  /* Hero Grand Showcase on Mobile */
+  /* Dedicated Character Showcase at the Top (Crisp 100% Opacity, Zero Border, Zero Cuts) */
+  .hero-cinematic-stage {
+    position: relative !important;
+    inset: auto !important;
+    width: 100% !important;
+    height: 235px !important;
+    min-height: 235px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    z-index: 2 !important;
+    margin: 2px 0 6px 0 !important;
+    overflow: visible !important;
+    pointer-events: none !important;
+  }
+
+  .hero-cyber-aura {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    width: 235px !important;
+    height: 235px !important;
+    border-radius: 50% !important;
+    background: radial-gradient(circle, rgba(0, 240, 255, 0.44) 0%, rgba(139, 92, 246, 0.28) 46%, transparent 72%) !important;
+    filter: blur(35px) !important;
+    z-index: 1 !important;
+    pointer-events: none !important;
+  }
+
+  .hero-scroll-wrapper {
+    position: relative !important;
+    inset: auto !important;
+    width: 220px !important;
+    height: 220px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    z-index: 2 !important;
+    pointer-events: none !important;
+    transform-origin: center center !important;
+    will-change: transform, opacity !important;
+  }
+
+  .hero-cinematic-img {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    width: 220px !important;
+    height: 220px !important;
+    max-width: 220px !important;
+    max-height: 220px !important;
+    object-fit: cover !important;
+    object-position: center 12% !important;
+    opacity: 1 !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    filter: contrast(1.06) brightness(1.03) !important;
+    z-index: 2 !important;
+    /* Seamless Organic Elliptical Feathering: Zero box cuts, zero border lines, 100% crisp authentic face */
+    mask-image: radial-gradient(ellipse 75% 82% at 50% 40%, #000 45%, rgba(0,0,0,0.85) 65%, transparent 96%) !important;
+    -webkit-mask-image: radial-gradient(ellipse 75% 82% at 50% 40%, #000 45%, rgba(0,0,0,0.85) 65%, transparent 96%) !important;
+    transform-origin: center center !important;
+    will-change: transform !important;
+  }
+
+  .hero-dissolve-vignette {
+    display: none !important;
+  }
+
+  /* Hero Grand Showcase on Mobile: Positioned cleanly below portrait with ZERO overlap */
   .hero-grand-showcase {
-    grid-template-columns: 1fr;
-    gap: 20px;
-    text-align: center;
+    position: relative !important;
+    z-index: 5 !important;
+    width: 100% !important;
+    height: auto !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 8px !important;
   }
 
-  .hero-portrait-col {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-  }
-
-  .hero-portrait-frame {
-    max-width: 250px;
-    margin: 0 auto;
-    border-radius: 18px;
-  }
-
-  .hero-8k-img {
-    aspect-ratio: 3 / 4;
-    width: 100%;
-  }
-
-  .portrait-status-badge {
-    top: 10px;
-    left: 10px;
-    padding: 4px 10px;
-    font-size: 0.62rem;
-  }
-
-  .portrait-telemetry-pill {
-    bottom: 10px;
-    padding: 5px 12px;
-    font-size: 0.65rem;
+  .hero-portrait-spacer {
+    display: none !important;
   }
 
   .hero-content-col {
-    align-items: center;
-    text-align: center;
-    gap: 8px;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 8px !important;
+    width: 100% !important;
   }
 
   .hero-role-badge {
-    font-size: 0.72rem;
-    letter-spacing: 0.15em;
+    font-size: 0.72rem !important;
+    letter-spacing: 0.12em !important;
+    color: var(--primary-cyan) !important;
+    margin: 0 0 2px 0 !important;
   }
 
   .hero-name-title {
-    margin: 0;
+    margin: 0 !important;
   }
 
   .glow-name {
-    font-size: clamp(1.85rem, 6.8vw, 2.35rem);
-    white-space: nowrap;
+    font-size: clamp(1.85rem, 7vw, 2.25rem) !important;
+    white-space: nowrap !important;
+    line-height: 1.15 !important;
   }
 
   .hero-role-pill {
-    font-size: 0.7rem;
-    padding: 4px 12px;
-    align-self: center;
+    font-size: 0.68rem !important;
+    padding: 4px 12px !important;
+    align-self: center !important;
+    margin-top: 2px !important;
   }
 
   .hero-subtitle {
-    font-size: 0.92rem;
-    line-height: 1.55;
-    color: var(--text-muted);
-    margin-bottom: 10px;
-    max-width: 100%;
+    font-size: 0.88rem !important;
+    line-height: 1.55 !important;
+    color: var(--text-muted) !important;
+    margin: 2px auto 6px !important;
+    max-width: 95% !important;
   }
 
   /* 3-Column Compact Quick Metrics on Mobile */
   .hero-quick-metrics {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 6px;
-    width: 100%;
-    margin: 4px 0 12px;
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 6px !important;
+    width: 100% !important;
+    max-width: 350px !important;
+    margin: 2px auto 8px !important;
   }
 
   .quick-metric-item {
-    padding: 8px 4px;
-    border-radius: 10px;
-    min-width: unset;
-    text-align: center;
+    padding: 7px 4px !important;
+    border-radius: 10px !important;
+    min-width: unset !important;
+    text-align: center !important;
   }
 
   .quick-metric-val {
-    font-size: 1.05rem;
-    font-weight: 800;
+    font-size: 1.02rem !important;
+    font-weight: 800 !important;
   }
 
   .quick-metric-lbl {
-    font-size: 0.6rem;
-    letter-spacing: 0.02em;
-    margin-top: 1px;
+    font-size: 0.58rem !important;
+    letter-spacing: 0.02em !important;
+    margin-top: 1px !important;
   }
 
   /* Full Width Touch-Friendly Buttons */
   .hero-cta-row {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    width: 100%;
-    margin-top: 4px;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+    width: 100% !important;
+    max-width: 340px !important;
+    margin: 4px auto 0 !important;
   }
 
   .btn-cyber-primary, .btn-cyber-secondary, .btn-cyber-outline {
-    justify-content: center;
-    width: 100%;
-    padding: 12px 14px;
-    font-size: 0.82rem;
-    border-radius: 10px;
+    justify-content: center !important;
+    width: 100% !important;
+    padding: 12px 14px !important;
+    font-size: 0.82rem !important;
+    border-radius: 10px !important;
   }
 
   .hero-socials {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    margin-top: 6px;
+    display: flex !important;
+    justify-content: center !important;
+    gap: 12px !important;
+    margin-top: 6px !important;
   }
 
   .social-icon-link {
-    width: 38px;
-    height: 38px;
+    width: 38px !important;
+    height: 38px !important;
     border-radius: 8px;
   }
 
@@ -1924,15 +2173,28 @@ body.theme-light .footer-bar {
   }
 
   .brand-name {
-    font-size: 0.85rem;
+    font-size: 0.82rem;
   }
 
-  .hero-portrait-frame {
-    max-width: 220px;
+  .hero-cinematic-stage {
+    height: 195px !important;
+    min-height: 195px !important;
+  }
+
+  .hero-scroll-wrapper, .hero-cinematic-img {
+    width: 185px !important;
+    height: 185px !important;
+    max-width: 185px !important;
+    max-height: 185px !important;
+  }
+
+  .hero-cyber-aura {
+    width: 190px !important;
+    height: 190px !important;
   }
 
   .glow-name {
-    font-size: 1.7rem;
+    font-size: 1.65rem !important;
   }
 
   .quick-metric-val {

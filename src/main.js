@@ -19,7 +19,15 @@ document.addEventListener('DOMContentLoaded', () => {
     touchMultiplier: 1.8
   });
 
-  lenis.on('scroll', ScrollTrigger.update);
+  lenis.on('scroll', (e) => {
+    ScrollTrigger.update();
+    if (e && e.scroll <= 60) {
+      const scrollWrapper = document.getElementById('hero-scroll-wrapper');
+      const heroContent = document.getElementById('hero-content-wrapper');
+      if (scrollWrapper) gsap.set(scrollWrapper, { opacity: 1, y: 0, scale: 1 });
+      if (heroContent) gsap.set(heroContent, { opacity: 1, y: 0 });
+    }
+  });
 
   gsap.ticker.add((time) => {
     lenis.raf(time * 1000);

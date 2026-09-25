@@ -38,7 +38,7 @@ export class CameraRig {
     ];
 
     this.initScrollChoreography();
-    this.initHeroPortraitTilt();
+    this.initHeroCinematicAnimation();
   }
 
   initScrollChoreography() {
@@ -127,34 +127,152 @@ export class CameraRig {
     const targetSection = document.getElementById(this.sectionIds[index]);
     if (targetSection) {
       targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (index === 0) {
+        const scrollWrapper = document.getElementById('hero-scroll-wrapper');
+        const heroContent = document.getElementById('hero-content-wrapper');
+        if (scrollWrapper) gsap.to(scrollWrapper, { opacity: 1, y: 0, scale: 1, duration: 0.35, ease: 'power2.out' });
+        if (heroContent) gsap.to(heroContent, { opacity: 1, y: 0, duration: 0.35, ease: 'power2.out' });
+      }
     }
   }
 
-  initHeroPortraitTilt() {
-    const card = document.getElementById('hero-portrait-card');
+  initHeroCinematicAnimation() {
     const heroSection = document.getElementById('scene-hero');
-    if (!card || !heroSection) return;
+    const scrollWrapper = document.getElementById('hero-scroll-wrapper');
+    const heroImg = document.getElementById('hero-cinematic-img');
+    const heroAura = document.querySelector('.hero-cyber-aura');
+    const heroContent = document.getElementById('hero-content-wrapper');
 
-    const handleMouseMove = (e) => {
-      const rect = card.getBoundingClientRect();
-      const cardX = rect.left + rect.width / 2;
-      const cardY = rect.top + rect.height / 2;
+    if (!scrollWrapper || !heroImg) return;
 
-      const deltaX = (e.clientX - cardX) / (rect.width / 2);
-      const deltaY = (e.clientY - cardY) / (rect.height / 2);
-
-      // Maximum 12 degrees rotation
-      const rotY = deltaX * 12;
-      const rotX = -deltaY * 12;
-
-      card.style.transform = `perspective(1000px) rotateX(${rotX.toFixed(2)}deg) rotateY(${rotY.toFixed(2)}deg) scale3d(1.02, 1.02, 1.02)`;
+    // Helper: Reset hero portrait & content to pristine 100% visible state
+    const resetHeroToVisible = () => {
+      gsap.set(scrollWrapper, { opacity: 1, y: 0, scale: 1 });
+      if (heroContent) {
+        gsap.set(heroContent, { opacity: 1, y: 0 });
+      }
     };
 
-    const handleMouseLeave = () => {
-      card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
-    };
+    // 1. Initial Cinematic Intro Reveal (Runs once on page load)
+    gsap.fromTo(scrollWrapper, 
+      { opacity: 0, scale: 1.06, x: -30 },
+      { opacity: 1, scale: 1, x: 0, duration: 1.8, ease: 'power3.out', delay: 0.1 }
+    );
 
-    heroSection.addEventListener('mousemove', handleMouseMove);
-    heroSection.addEventListener('mouseleave', handleMouseLeave);
+    if (heroAura) {
+      gsap.fromTo(heroAura,
+        { opacity: 0, scale: 0.6 },
+        { opacity: 0.85, scale: 1, duration: 2.2, ease: 'power2.out', delay: 0.25 }
+      );
+    }
+
+    // 2. Direct Window Scroll Guarantee: Whenever near the top (scrollY <= 60), ensure full visibility!
+    window.addEventListener('scroll', () => {
+      const scrollY = window.pageYOffset || document.documentElement.scrollTop || 0;
+      if (scrollY <= 60) {
+        resetHeroToVisible();
+      }
+    }, { passive: true });
+
+    // Refresh ScrollTrigger once the image and fonts load
+    if (heroImg.complete) {
+      ScrollTrigger.refresh();
+    } else {
+      heroImg.addEventListener('load', () => ScrollTrigger.refresh());
+    }
+    window.addEventListener('load', () => ScrollTrigger.refresh());
+
+    // 3. Cinematic Two-Way ScrollTrigger: Fades on Scroll Down, Smoothly Reappears on Scroll Up!
+    if (heroSection) {
+      ScrollTrigger.create({
+        trigger: heroSection,
+        start: 'top top',
+        end: 'bottom top',
+        scrub: 0.4,
+        invalidateOnRefresh: true,
+        onUpdate: (self) => {
+          // p: 0 at top, 1 when scrolled past hero
+          const p = self.progress;
+
+          // If at or very close to top, immediately restore full opacity
+          if (p <= 0.04) {
+            resetHeroToVisible();
+            return;
+          }
+
+          // Smooth two-way opacity: 1 at top -> 0 as you scroll down, and 0 -> 1 as you scroll back up
+          const op = Math.max(0, Math.min(1, 1 - (p - 0.04) * 1.45));
+          const yOffset = p * 130;
+          const sc = 1 - p * 0.06;
+
+          gsap.set(scrollWrapper, {
+            opacity: op,
+            y: yOffset,
+            scale: sc
+          });
+
+          if (heroContent) {
+            gsap.set(heroContent, {
+              opacity: Math.max(0, Math.min(1, 1 - (p - 0.04) * 1.55)),
+              y: -p * 90
+            });
+          }
+        },
+        onEnterBack: () => {
+          resetHeroToVisible();
+        },
+        onLeaveBack: () => {
+          resetHeroToVisible();
+        }
+      });
+    }
+
+    // 3. Interactive 3D Depth Mouse Parallax (Only on desktop/mouse devices)
+    if (heroSection && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+      const handleMouseMove = (e) => {
+        const normX = (e.clientX / window.innerWidth - 0.5) * 2;
+        const normY = (e.clientY / window.innerHeight - 0.5) * 2;
+
+        gsap.to(heroImg, {
+          x: normX * 18,
+          y: normY * 12,
+          rotationY: normX * 3.5,
+          rotationX: -normY * 2.5,
+          duration: 1.1,
+          ease: 'power2.out'
+        });
+
+        if (heroAura) {
+          gsap.to(heroAura, {
+            x: normX * 32,
+            y: normY * 22,
+            duration: 1.5,
+            ease: 'power2.out'
+          });
+        }
+      };
+
+      const handleMouseLeave = () => {
+        gsap.to(heroImg, {
+          x: 0,
+          y: 0,
+          rotationY: 0,
+          rotationX: 0,
+          duration: 1.3,
+          ease: 'power2.out'
+        });
+        if (heroAura) {
+          gsap.to(heroAura, {
+            x: 0,
+            y: 0,
+            duration: 1.3,
+            ease: 'power2.out'
+          });
+        }
+      };
+
+      heroSection.addEventListener('mousemove', handleMouseMove);
+      heroSection.addEventListener('mouseleave', handleMouseLeave);
+    }
   }
 }
