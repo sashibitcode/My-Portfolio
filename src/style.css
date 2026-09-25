@@ -119,8 +119,8 @@ body.theme-light #cinema-act-badge {
 
 body.theme-light .hero-portrait-frame {
   background: rgba(255, 255, 255, 0.92);
-  border-color: rgba(2, 132, 199, 0.4);
-  box-shadow: 0 12px 40px rgba(2, 132, 199, 0.18), 0 20px 40px rgba(0, 0, 0, 0.06);
+  border: none !important;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
 }
 
 body.theme-light .glow-name {
@@ -470,18 +470,18 @@ body.theme-light .footer-bar {
   width: 100%;
   max-width: 440px;
   border-radius: 24px;
-  background: rgba(10, 16, 35, 0.75);
-  border: 2px solid rgba(0, 240, 255, 0.45);
-  box-shadow: 0 0 50px rgba(0, 240, 255, 0.25), 0 25px 60px rgba(0, 0, 0, 0.85);
+  background: rgba(10, 16, 35, 0.6);
+  border: none !important;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(20px);
   overflow: hidden;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
 }
 
 .hero-portrait-frame:hover {
   transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 0 75px rgba(0, 240, 255, 0.5), 0 30px 80px rgba(0, 0, 0, 0.9);
-  border-color: var(--primary-cyan);
+  box-shadow: 0 25px 65px rgba(0, 0, 0, 0.85);
+  border: none !important;
 }
 
 .hero-8k-img {
@@ -503,12 +503,8 @@ body.theme-light .footer-bar {
   z-index: 2;
 }
 
-/* Corner Cyber HUD Accents */
 .portrait-hud-corners {
-  position: absolute;
-  inset: 12px;
-  pointer-events: none;
-  z-index: 4;
+  display: none !important;
 }
 
 .portrait-hud-corners .corner {
