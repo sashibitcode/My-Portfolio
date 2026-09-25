@@ -469,18 +469,17 @@ body.theme-light .footer-bar {
   position: relative;
   width: 100%;
   max-width: 440px;
-  border-radius: 24px;
-  background: rgba(10, 16, 35, 0.6);
+  border-radius: 28px;
+  background: transparent;
   border: none !important;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(20px);
+  box-shadow: 0 0 60px rgba(0, 240, 255, 0.2), 0 25px 60px rgba(0, 0, 0, 0.9);
   overflow: hidden;
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
 }
 
 .hero-portrait-frame:hover {
   transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 25px 65px rgba(0, 0, 0, 0.85);
+  box-shadow: 0 0 85px rgba(0, 240, 255, 0.4), 0 30px 80px rgba(0, 0, 0, 0.95);
   border: none !important;
 }
 
@@ -490,7 +489,9 @@ body.theme-light .footer-bar {
   aspect-ratio: 3 / 4;
   object-fit: cover;
   display: block;
-  filter: contrast(1.05) brightness(1.02);
+  border-radius: 28px;
+  border: none !important;
+  outline: none !important;
 }
 
 .portrait-glow-edge {
