@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-page: #FAF9F6;
+  --bg-surface: #FFFFFF;
+  --text-navy: #0B2545;
+  --accent-yellow: #F5B700;
+  --border-subtle: rgba(11, 37, 69, 0.12);
+  --border-navy: #0B2545;
+}
+
+body {
+  background-color: var(--bg-page);
+  color: var(--text-navy);
+  font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Subtle Graph-Paper Grid (Analyst's Notebook) */
+.bg-notebook-grid {
+  background-color: #FAF9F6;
+  background-image:
+    linear-gradient(to right, rgba(11, 37, 69, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(11, 37, 69, 0.05) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* Custom Text Selection */
+::selection {
+  background-color: #0B2545;
+  color: #FFFFFF;
+}
+
+/* Flat Arch Frame (rounded top, flat bottom) */
+.arch-frame {
+  border-top-left-radius: 9999px;
+  border-top-right-radius: 9999px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+/* Focus Indicator */
+:focus-visible {
+  outline: 2px solid #0B2545;
+  outline-offset: 2px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF9F6;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(11, 37, 69, 0.2);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #0B2545;
+}
+
+/* Transitions under 300ms */
+* {
+  transition-duration: 200ms;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
