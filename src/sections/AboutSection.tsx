@@ -25,10 +25,10 @@ export const AboutSection: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center lg:items-end">
           
-          {/* Left Column: Transparent Cutout with Layered Architectural Specimen Backdrop */}
-          <div className="lg:col-span-5 flex justify-center">
+          {/* Left Column: Freestanding Transparent Cutout Photo */}
+          <div className="lg:col-span-5 flex justify-center w-full self-end pb-2 lg:pb-0">
             <AboutCutoutPortrait />
           </div>
 
