@@ -1,5 +1,9 @@
 import { PortfolioData } from './types';
 
+const baseUrl = (import.meta.env.BASE_URL || '/').endsWith('/')
+  ? (import.meta.env.BASE_URL || '/')
+  : `${import.meta.env.BASE_URL}/`;
+
 export const portfolioData: PortfolioData = {
   personal: {
     name: 'Shashikant Raj',
@@ -270,24 +274,24 @@ export const portfolioData: PortfolioData = {
   ],
   resume: {
     filename: 'Shashikant-Raj-Resume.pdf',
-    path: '/assets/resume/Shashikant-Raj-Resume.pdf',
+    path: `${baseUrl}assets/resume/Shashikant-Raj-Resume.pdf`,
     label: 'Download Shashikant Raj Resume (PDF)',
     updatedDate: 'Verified 2026',
   },
   photos: {
     primary: {
-      src: '/images/profile-primary.webp',
+      src: `${baseUrl}images/profile-primary.webp`,
       alt: 'Portrait of Shashikant Raj in business attire',
       width: 1145,
       height: 1374,
       variants: {
-        webp480: '/images/profile-primary-480.webp',
-        webp768: '/images/profile-primary-768.webp',
-        webpFull: '/images/profile-primary-1145.webp',
-        avif480: '/images/profile-primary-480.avif',
-        avif768: '/images/profile-primary-768.avif',
-        avifFull: '/images/profile-primary-1145.avif',
-        fallbackJpg: '/images/profile-primary.jpg',
+        webp480: `${baseUrl}images/profile-primary-480.webp`,
+        webp768: `${baseUrl}images/profile-primary-768.webp`,
+        webpFull: `${baseUrl}images/profile-primary-1145.webp`,
+        avif480: `${baseUrl}images/profile-primary-480.avif`,
+        avif768: `${baseUrl}images/profile-primary-768.avif`,
+        avifFull: `${baseUrl}images/profile-primary-1145.avif`,
+        fallbackJpg: `${baseUrl}images/profile-primary.jpg`,
       },
       focalPoint: {
         mobile: '50% 24%',
@@ -301,18 +305,18 @@ export const portfolioData: PortfolioData = {
       },
     },
     secondary: {
-      src: '/images/profile-secondary.webp',
+      src: `${baseUrl}images/profile-secondary.webp`,
       alt: 'Shashikant Raj at transit station',
       width: 1086,
       height: 1448,
       variants: {
-        webp480: '/images/profile-secondary-480.webp',
-        webp768: '/images/profile-secondary-768.webp',
-        webpFull: '/images/profile-secondary-1086.webp',
-        avif480: '/images/profile-secondary-480.avif',
-        avif768: '/images/profile-secondary-768.avif',
-        avifFull: '/images/profile-secondary-1086.avif',
-        fallbackJpg: '/images/profile-secondary.jpg',
+        webp480: `${baseUrl}images/profile-secondary-480.webp`,
+        webp768: `${baseUrl}images/profile-secondary-768.webp`,
+        webpFull: `${baseUrl}images/profile-secondary-1086.webp`,
+        avif480: `${baseUrl}images/profile-secondary-480.avif`,
+        avif768: `${baseUrl}images/profile-secondary-768.avif`,
+        avifFull: `${baseUrl}images/profile-secondary-1086.avif`,
+        fallbackJpg: `${baseUrl}images/profile-secondary.jpg`,
       },
       focalPoint: {
         mobile: '50% 22%',
@@ -330,8 +334,8 @@ export const portfolioData: PortfolioData = {
     title: 'Shashikant Raj | Data Analyst | sashibitcode',
     description:
       'Personal portfolio of Shashikant Raj (sashibitcode), B.Tech CSE student at Jagannath University analyzing data with Python, SQL, and Power BI.',
-    canonicalUrl: 'https://sashibitcode.github.io/',
-    ogImage: '/images/og-image.png',
+    canonicalUrl: 'https://sashibitcode.github.io/My-Portfolio/',
+    ogImage: `${baseUrl}images/og-image.png`,
     keywords: [
       'Shashikant Raj',
       'sashibitcode',
