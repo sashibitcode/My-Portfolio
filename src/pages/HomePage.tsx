@@ -5,6 +5,8 @@ import { ProjectsSection } from '@/sections/ProjectsSection';
 import { SkillsSection } from '@/sections/SkillsSection';
 import { AboutSection } from '@/sections/AboutSection';
 import { EducationSection } from '@/sections/EducationSection';
+import { ExperienceSection } from '@/sections/ExperienceSection';
+import { CertificationsSection } from '@/sections/CertificationsSection';
 import { ResumeSection } from '@/sections/ResumeSection';
 import { ContactSection } from '@/sections/ContactSection';
 import { Footer } from '@/components/layout/Footer';
@@ -17,6 +19,8 @@ export const HomePage: React.FC = () => {
     'skills',
     'about',
     'education',
+    'experience',
+    'certifications',
     'resume',
     'contact',
   ];
@@ -43,6 +47,8 @@ export const HomePage: React.FC = () => {
         <SkillsSection />
         <AboutSection />
         <EducationSection />
+        <ExperienceSection />
+        <CertificationsSection />
         <ResumeSection />
         <ContactSection />
       </main>

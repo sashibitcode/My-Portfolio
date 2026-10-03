@@ -14,6 +14,8 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection = 'home' }) => {
     { id: 'projects', label: 'Projects' },
     { id: 'skills', label: 'Skills' },
     { id: 'about', label: 'About' },
+    { id: 'experience', label: 'Experience' },
+    { id: 'certifications', label: 'Certifications' },
     { id: 'contact', label: 'Contact' },
   ];
 
@@ -50,7 +52,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection = 'home' }) => {
         </button>
 
         {/* Desktop Nav Links Right */}
-        <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
+        <nav className="hidden md:flex items-center gap-4 lg:gap-6 text-sm font-medium">
           {navLinks.map((link) => {
             const isActive = activeSection === link.id;
             return (
