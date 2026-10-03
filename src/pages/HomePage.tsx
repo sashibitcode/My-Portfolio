@@ -15,12 +15,12 @@ import { useScrollSpy } from '@/hooks/useScrollSpy';
 export const HomePage: React.FC = () => {
   const sectionIds = [
     'home',
-    'projects',
-    'skills',
     'about',
-    'education',
+    'skills',
+    'projects',
     'experience',
     'certifications',
+    'education',
     'resume',
     'contact',
   ];
@@ -43,12 +43,12 @@ export const HomePage: React.FC = () => {
       {/* Main Semantic Region with exact requested section order */}
       <main id="main-content">
         <HeroSection />
-        <ProjectsSection />
-        <SkillsSection />
         <AboutSection />
-        <EducationSection />
+        <SkillsSection />
+        <ProjectsSection />
         <ExperienceSection />
         <CertificationsSection />
+        <EducationSection />
         <ResumeSection />
         <ContactSection />
       </main>

@@ -14,7 +14,7 @@ export const ProjectsSection: React.FC = () => {
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12 pb-4 border-b border-navy/15">
           <div>
             <span className="font-mono text-xs font-bold text-navy/70 tracking-widest uppercase">
-              01 // PORTFOLIO
+              03 // PORTFOLIO
             </span>
             <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold uppercase tracking-tight text-navy mt-1">
               Featured Projects
