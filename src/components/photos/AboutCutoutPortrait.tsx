@@ -19,13 +19,13 @@ export const AboutCutoutPortrait: React.FC = () => {
             height={1448}
             loading="lazy"
             decoding="async"
-            className="w-auto h-auto max-w-[85vw] sm:max-w-[380px] md:max-w-[420px] lg:max-w-none max-h-[460px] sm:max-h-[520px] lg:max-h-[580px] xl:max-h-[620px] object-contain drop-shadow-[0_16px_32px_rgba(11,37,69,0.18)] select-none transition-transform duration-300 group-hover:scale-[1.01]"
+            className="w-auto h-auto max-w-[85vw] sm:max-w-[340px] md:max-w-[380px] lg:max-w-none max-h-[320px] sm:max-h-[360px] md:max-h-[380px] lg:max-h-[410px] xl:max-h-[440px] object-contain drop-shadow-[0_12px_24px_rgba(11,37,69,0.16)] select-none transition-transform duration-300 group-hover:scale-[1.01]"
           />
         </picture>
       </div>
 
-      {/* Specimen Caption directly below with 16px top margin */}
-      <div className="mt-4 text-center font-mono text-[11px] text-navy/70 uppercase tracking-wider font-semibold">
+      {/* Specimen Caption directly below with compact top margin */}
+      <div className="mt-2.5 text-center font-mono text-[10px] sm:text-[11px] text-navy/70 uppercase tracking-wider font-semibold">
         FIG. 2.0 · SHASHIKANT RAJ (CANDIDATE PROFILE)
       </div>
 
