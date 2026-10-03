@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { portfolioData } from '@/data/portfolioData';
 import { Copy, Check, Send, Mail, MapPin, ArrowUpRight } from 'lucide-react';
-import { GithubIcon, LinkedinIcon } from '@/components/common/Icons';
+import { GithubIcon, LinkedinIcon, InstagramIcon, LeetcodeIcon } from '@/components/common/Icons';
 import { Toast } from '@/components/common/Toast';
 
 export const ContactSection: React.FC = () => {
@@ -113,6 +113,8 @@ export const ContactSection: React.FC = () => {
                     <div className="flex items-center gap-3">
                       {item.platform === 'github' && <GithubIcon className="w-4 h-4 text-navy" />}
                       {item.platform === 'linkedin' && <LinkedinIcon className="w-4 h-4 text-navy" />}
+                      {item.platform === 'leetcode' && <LeetcodeIcon className="w-4 h-4 text-navy" />}
+                      {item.platform === 'instagram' && <InstagramIcon className="w-4 h-4 text-navy" />}
                       <span className="font-display text-lg font-bold text-navy uppercase tracking-tight group-hover:text-yellow-hover">
                         {item.label}
                       </span>

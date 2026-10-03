@@ -68,6 +68,12 @@ export const portfolioData: PortfolioData = {
       handle: 'sashibitcode',
     },
     {
+      platform: 'instagram',
+      label: 'Instagram',
+      url: 'https://www.instagram.com/sashibitcode/',
+      handle: 'sashibitcode',
+    },
+    {
       platform: 'email',
       label: 'Email',
       url: 'mailto:sashiverma7779@gmail.com',

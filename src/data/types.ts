@@ -15,7 +15,7 @@ export interface PersonalInfo {
 }
 
 export interface SocialLink {
-  platform: 'github' | 'linkedin' | 'leetcode' | 'email';
+  platform: 'github' | 'linkedin' | 'leetcode' | 'email' | 'instagram';
   label: string;
   url: string;
   handle?: string;
