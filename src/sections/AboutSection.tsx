@@ -1,9 +1,9 @@
 import React from 'react';
 import { portfolioData } from '@/data/portfolioData';
+import { AboutCutoutPortrait } from '@/components/photos/AboutCutoutPortrait';
 
 export const AboutSection: React.FC = () => {
   const { education } = portfolioData;
-  const photo = portfolioData.photos.secondary;
   const edu = education[0];
 
   return (
@@ -27,57 +27,9 @@ export const AboutSection: React.FC = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           
-          {/* Left Column: Photo 2 framed in a rectangle with a thin navy offset border */}
+          {/* Left Column: Transparent Cutout with Layered Architectural Specimen Backdrop */}
           <div className="lg:col-span-5 flex justify-center">
-            <div className="relative inline-block select-none">
-              
-              {/* Thin Navy Offset Border (with light yellow fill) behind the rectangle */}
-              <div
-                className="absolute top-3.5 right-3.5 sm:top-4 sm:right-4 w-full h-full bg-yellow/20 border-2 border-navy z-0"
-                aria-hidden="true"
-              />
-
-              {/* Main Photo 2 Rectangular Frame with Thin Navy Border */}
-              <div className="relative z-10 w-[260px] sm:w-[300px] md:w-[330px] lg:w-[360px] aspect-[3/4] overflow-hidden border-2 border-navy bg-white p-2">
-                <picture>
-                  <source
-                    type="image/avif"
-                    srcSet={`
-                      ${photo.variants.avif480} 480w,
-                      ${photo.variants.avif768} 768w,
-                      ${photo.variants.avifFull} 1086w
-                    `}
-                    sizes="(max-width: 640px) 260px, (max-width: 1024px) 330px, 360px"
-                  />
-                  <source
-                    type="image/webp"
-                    srcSet={`
-                      ${photo.variants.webp480} 480w,
-                      ${photo.variants.webp768} 768w,
-                      ${photo.variants.webpFull} 1086w
-                    `}
-                    sizes="(max-width: 640px) 260px, (max-width: 1024px) 330px, 360px"
-                  />
-                  <img
-                    src={photo.src}
-                    alt={photo.alt}
-                    width={photo.width}
-                    height={photo.height}
-                    loading="eager"
-                    decoding="sync"
-                    className="w-full h-full object-cover"
-                    style={{
-                      objectPosition: '50% 25%',
-                    }}
-                  />
-                </picture>
-              </div>
-
-              {/* Specimen Caption */}
-              <div className="mt-3 text-center font-mono text-[11px] text-navy/70 uppercase tracking-wider">
-                Fig. 2.0 · Shashikant Raj (Transit Concourse)
-              </div>
-            </div>
+            <AboutCutoutPortrait />
           </div>
 
           {/* Right Column: Short First-Person Text from Resume */}
