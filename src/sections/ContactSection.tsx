@@ -15,7 +15,7 @@ export const ContactSection: React.FC = () => {
     try {
       await navigator.clipboard.writeText(personal.email);
       setCopied(true);
-      setToastMessage('Copied: sashiverma7779@gmail.com');
+      setToastMessage(`Copied: ${personal.email}`);
       setTimeout(() => setCopied(false), 2000);
       setTimeout(() => setToastMessage(''), 2500);
     } catch {
@@ -201,7 +201,7 @@ export const ContactSection: React.FC = () => {
 
               <div className="pt-2 flex flex-col sm:flex-row items-center justify-between gap-3">
                 <span className="text-[11px] font-mono text-navy/60">
-                  Honest mailto dispatch: composes directly to sashiverma7779@gmail.com
+                  Honest mailto dispatch: composes directly to {personal.email}
                 </span>
 
                 <button

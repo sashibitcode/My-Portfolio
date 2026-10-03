@@ -11,7 +11,7 @@ export const portfolioData: PortfolioData = {
     title: 'Data Analyst',
     roleSubtitle: 'B.Tech Computer Science · Jagannath University, Jaipur',
     location: 'Jaipur, Rajasthan, India',
-    email: 'sashiverma7779@gmail.com',
+    email: 'sashibitcode@gmail.com',
     phone: '+91-6204961091',
     summary:
       'I break down raw, messy datasets into structured numbers and clear dashboards. Currently studying Computer Science at Jagannath University in Jaipur, working with Python, SQL, and Power BI.',
@@ -76,8 +76,8 @@ export const portfolioData: PortfolioData = {
     {
       platform: 'email',
       label: 'Email',
-      url: 'mailto:sashiverma7779@gmail.com',
-      handle: 'sashiverma7779@gmail.com',
+      url: 'mailto:sashibitcode@gmail.com',
+      handle: 'sashibitcode@gmail.com',
     },
   ],
   education: [
