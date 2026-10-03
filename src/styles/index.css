@@ -62,6 +62,22 @@ body {
   background: #0B2545;
 }
 
+/* Subtle Hero Cutout Page Load Animation (0.6s ease-out) */
+@keyframes heroCutoutFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-hero-cutout {
+  animation: heroCutoutFadeUp 0.6s ease-out forwards;
+}
+
 /* Transitions under 300ms */
 * {
   transition-duration: 200ms;

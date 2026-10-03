@@ -1,6 +1,6 @@
 import React from 'react';
 import { portfolioData } from '@/data/portfolioData';
-import { HeroArchPortrait } from '@/components/photos/HeroArchPortrait';
+import { HeroCutoutPortrait } from '@/components/photos/HeroCutoutPortrait';
 import { FileDown, ArrowDownRight } from 'lucide-react';
 
 export const HeroSection: React.FC = () => {
@@ -21,19 +21,14 @@ export const HeroSection: React.FC = () => {
   };
 
   return (
-    <section id="home" className="relative pt-20 sm:pt-28 pb-16 lg:pb-24 border-b border-navy/15 overflow-x-hidden">
+    <section id="home" className="relative pt-20 sm:pt-28 pb-12 lg:pb-16 border-b border-navy/15 overflow-x-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Split Layout: On mobile, photo is first (order-1), text below (order-2) */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        {/* Split Layout: On mobile, text is first (order-1), photo below (order-2); on desktop, text left, photo right bottom-aligned */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-end">
           
-          {/* Photo Column: Order 1 on mobile, Order 2 on desktop */}
-          <div className="order-1 lg:order-2 lg:col-span-5 flex justify-center w-full">
-            <HeroArchPortrait />
-          </div>
-
-          {/* Text Column: Order 2 on mobile, Order 1 on desktop */}
-          <div className="order-2 lg:order-1 lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left mt-4 lg:mt-0">
+          {/* Text Column: Order 1 on mobile, Order 1 on desktop */}
+          <div className="order-1 lg:order-1 lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left mt-2 lg:mt-0 pb-2 lg:pb-6">
             
             {/* Huge Condensed Display Heading */}
             <h1 className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold uppercase tracking-tight text-navy leading-[0.95] max-w-full">
@@ -82,6 +77,11 @@ export const HeroSection: React.FC = () => {
               <span className="font-semibold text-navy">Open to Data Analyst Roles</span>
             </div>
 
+          </div>
+
+          {/* Photo Column: Order 2 on mobile (below headline), Order 2 on desktop (on right, bottom-aligned) */}
+          <div className="order-2 lg:order-2 lg:col-span-5 flex justify-center lg:justify-end w-full self-end pt-6 lg:pt-0">
+            <HeroCutoutPortrait />
           </div>
 
         </div>
