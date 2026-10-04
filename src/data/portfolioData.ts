@@ -340,7 +340,7 @@ export const portfolioData: PortfolioData = {
     title: 'Shashikant Raj | Data Analyst | sashibitcode',
     description:
       'Personal portfolio of Shashikant Raj (sashibitcode), B.Tech CSE student at Jagannath University analyzing data with Python, SQL, and Power BI.',
-    canonicalUrl: 'https://sashibitcode.github.io/My-Portfolio/',
+    canonicalUrl: 'https://sashibitcode.vercel.app/',
     ogImage: `${baseUrl}images/og-image.png`,
     keywords: [
       'Shashikant Raj',
