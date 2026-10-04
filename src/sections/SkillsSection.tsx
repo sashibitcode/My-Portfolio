@@ -8,38 +8,36 @@ export const SkillsSection: React.FC = () => {
     <section id="skills" className="py-20 md:py-28 border-b border-navy/15">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12 pb-4 border-b border-navy/15">
-          <div>
-            <span className="font-mono text-xs font-bold text-navy/70 tracking-widest uppercase">
-              02 // CAPABILITIES
-            </span>
-            <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold uppercase tracking-tight text-navy mt-1">
-              Technical Skills
-            </h2>
-          </div>
-          <p className="text-sm font-sans text-navy/70 max-w-md">
+        {/* Section Header with directly grouped description */}
+        <div className="mb-10 pb-4 border-b border-navy/15">
+          <span className="font-mono text-xs font-bold text-navy/70 tracking-wider">
+            02 // Capabilities
+          </span>
+          <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-navy mt-1">
+            Technical Skills
+          </h2>
+          <p className="mt-2 text-sm font-sans text-navy/70 max-w-xl leading-relaxed">
             Plain categorized inventory of programming languages, analytical frameworks, and data visualization tools.
           </p>
         </div>
 
-        {/* Plain Grouped List (No bars or percentages) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        {/* Natural Height Grid (No dead whitespace) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 items-start">
           {skills.map((category, idx) => (
             <div
               key={category.id}
               className="bg-white border border-navy/20 p-6 sm:p-7 shadow-sm rounded-none flex flex-col justify-between"
             >
               <div>
-                {/* Header */}
+                {/* Header with clear category numbering */}
                 <div className="flex items-center justify-between pb-3 mb-4 border-b border-navy/15">
                   <span className="font-mono text-xs font-bold text-navy/50">
                     GROUP 0{idx + 1}
                   </span>
-                  <span className="w-2.5 h-2.5 bg-yellow border border-navy inline-block" />
+                  <span className="font-mono text-xs text-navy/40 font-semibold">[0{idx + 1}]</span>
                 </div>
 
-                <h3 className="font-display text-2xl font-bold text-navy uppercase tracking-tight">
+                <h3 className="font-display text-2xl font-bold text-navy tracking-tight">
                   {category.name}
                 </h3>
                 
@@ -47,27 +45,26 @@ export const SkillsSection: React.FC = () => {
                   {category.description}
                 </p>
 
-                {/* Plain Tag List */}
+                {/* Plain Tag List without deceptive interactive affordances */}
                 <ul className="space-y-2">
                   {category.skills.map((s) => (
                     <li
                       key={s.name}
-                      className="flex items-center justify-between py-1.5 px-3 bg-[#FAF9F6] border border-navy/10 font-mono text-xs text-navy"
+                      className={`flex items-center justify-between py-2 px-3 border border-navy/10 font-mono text-xs transition-colors ${
+                        s.highlight
+                          ? 'bg-white font-semibold text-navy border-l-2 border-l-navy'
+                          : 'bg-[#FAF9F6] font-normal text-navy/80'
+                      }`}
                     >
-                      <span className="font-medium">{s.name}</span>
-                      {s.highlight && (
-                        <span className="text-[10px] font-bold text-navy bg-yellow/30 px-1.5 py-0.5 border border-navy/15 uppercase">
-                          Core
-                        </span>
-                      )}
+                      <span>{s.name}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
-              {/* Count note */}
-              <div className="mt-6 pt-3 border-t border-navy/10 text-right font-mono text-[10px] text-navy/60">
-                {category.skills.length} VERIFIED ITEMS
+              {/* Accurate count note reflecting all skills in the category */}
+              <div className="mt-6 pt-3 border-t border-navy/10 text-right font-mono text-xs text-navy/60">
+                {category.skills.length} SKILLS TOTAL
               </div>
             </div>
           ))}

@@ -9,23 +9,23 @@ export const AboutCutoutPortrait: React.FC = () => {
     <div className="relative inline-flex flex-col items-center select-none group w-full">
       
       {/* Freestanding Transparent Cutout Silhouette (Zero background boxes) */}
-      <div className="relative flex items-end justify-center w-full">
-        <picture className="relative z-10 flex items-end justify-center">
-          <source type="image/webp" srcSet={`${baseUrl}shashikant-about-cutout.webp`} />
+      <div className="relative flex items-start justify-center w-full">
+        <picture className="relative z-10 flex items-start justify-center">
+          <source type="image/webp" srcSet={`${baseUrl}shashikant-about-cutout.webp?v=2`} />
           <img
-            src={`${baseUrl}shashikant-about-cutout.png`}
+            src={`${baseUrl}shashikant-about-cutout.png?v=2`}
             alt="Shashikant Raj - Candidate Profile"
-            width={1086}
-            height={1448}
-            loading="lazy"
-            decoding="async"
-            className="w-auto h-auto max-w-[85vw] sm:max-w-[380px] md:max-w-[420px] lg:max-w-none max-h-[440px] sm:max-h-[480px] lg:max-h-[520px] xl:max-h-[550px] object-contain drop-shadow-[0_16px_32px_rgba(11,37,69,0.18)] select-none transition-transform duration-300 group-hover:scale-[1.01]"
+            width={579}
+            height={1161}
+            loading="eager"
+            decoding="sync"
+            className="w-auto h-auto max-w-[90vw] sm:max-w-[420px] md:max-w-[460px] lg:max-w-none max-h-[480px] sm:max-h-[530px] lg:max-h-[560px] xl:max-h-[590px] object-contain drop-shadow-[0_12px_28px_rgba(11,37,69,0.16)] select-none transition-transform duration-300 group-hover:scale-[1.01]"
           />
         </picture>
       </div>
 
       {/* Specimen Caption directly below with compact top margin */}
-      <div className="mt-2.5 text-center font-mono text-[11px] text-navy/70 uppercase tracking-wider font-semibold">
+      <div className="mt-2 text-center font-mono text-xs text-navy/70 uppercase tracking-wider font-semibold">
         FIG. 2.0 · SHASHIKANT RAJ (CANDIDATE PROFILE)
       </div>
 

@@ -29,22 +29,22 @@ export const Footer: React.FC = () => {
             </p>
           </div>
 
-          <div className="flex flex-wrap items-center gap-4">
+          <div className="flex flex-wrap items-center gap-6 sm:gap-8">
             {social.map((s) => (
               <a
                 key={s.platform}
                 href={s.url}
                 target={s.platform !== 'email' ? '_blank' : undefined}
                 rel={s.platform !== 'email' ? 'noopener noreferrer' : undefined}
-                className="text-navy/80 hover:text-navy font-medium underline underline-offset-4 transition-colors"
+                className="py-1 text-navy/80 hover:text-navy font-medium underline underline-offset-4 transition-colors"
               >
                 {s.label}
               </a>
             ))}
-            <span className="text-navy/30">|</span>
+            <span className="text-navy/30 hidden sm:inline">|</span>
             <button
               onClick={scrollToTop}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 border border-navy bg-white text-navy hover:bg-yellow transition-colors font-bold uppercase text-[11px]"
+              className="inline-flex items-center gap-1.5 px-4 py-2 border-2 border-navy bg-white text-navy hover:bg-navy hover:text-white transition-colors font-mono font-bold text-xs uppercase tracking-wider"
             >
               <span>Back to Top</span>
               <ArrowUp className="w-3.5 h-3.5" />

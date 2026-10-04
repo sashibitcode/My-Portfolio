@@ -38,7 +38,7 @@ export const HeroCutoutPortrait: React.FC = () => {
       </div>
 
       {/* Caption directly below the photo with exactly 16px top margin */}
-      <div className="mt-4 text-center font-mono text-[11px] text-navy/70 uppercase tracking-wider font-semibold">
+      <div className="mt-4 text-center font-mono text-xs text-navy/70 uppercase tracking-wider font-semibold">
         FIG. 1.0 · SHASHIKANT RAJ
       </div>
     </div>

@@ -12,8 +12,8 @@ export const ExperienceSection: React.FC = () => {
         {/* Section Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12 pb-4 border-b border-navy/15">
           <div>
-            <span className="font-mono text-xs font-bold text-navy/70 tracking-widest uppercase">
-              04 // INDUSTRY EXPERIENCE
+            <span className="font-mono text-xs font-bold text-navy/70 tracking-wider">
+              04 // Industry Experience
             </span>
             <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold uppercase tracking-tight text-navy mt-1">
               Experience
@@ -35,11 +35,11 @@ export const ExperienceSection: React.FC = () => {
                 
                 {/* Left: Duration and Company */}
                 <div className="md:col-span-4 space-y-2">
-                  <span className="inline-block px-3 py-1 bg-yellow text-navy font-mono text-xs font-bold uppercase tracking-wider border border-navy/20">
+                  <span className="inline-block px-2.5 py-1 bg-[#FAF9F6] text-navy/70 font-mono text-xs font-semibold uppercase tracking-wider border border-navy/15">
                     {exp.duration}
                   </span>
                   
-                  <h3 className="font-display text-2xl sm:text-3xl font-bold text-navy uppercase tracking-tight mt-2">
+                  <h3 className="font-display text-2xl sm:text-3xl font-bold text-navy tracking-tight mt-2">
                     {exp.organization}
                   </h3>
                   
@@ -47,27 +47,13 @@ export const ExperienceSection: React.FC = () => {
                     <Briefcase className="w-3.5 h-3.5 text-navy" />
                     <span className="font-bold">{exp.role}</span>
                   </div>
-
-                  {exp.credentialUrl && (
-                    <div className="pt-3">
-                      <a
-                        href={exp.credentialUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-3 py-1.5 bg-navy text-white hover:bg-navy-dark transition-colors font-mono text-xs font-bold uppercase tracking-wider"
-                      >
-                        <span>View Certificate</span>
-                        <ArrowUpRight className="w-3.5 h-3.5" />
-                      </a>
-                    </div>
-                  )}
                 </div>
 
-                {/* Right: Responsibilities and Technologies */}
+                {/* Right: Responsibilities, Technologies and Certificate Action */}
                 <div className="md:col-span-8 border-t md:border-t-0 md:border-l border-navy/15 pt-4 md:pt-0 md:pl-8 space-y-5">
                   <div>
-                    <span className="font-mono text-[10px] text-navy/60 uppercase font-bold tracking-wider block mb-2">
-                      KEY DELIVERABLES & IMPACT:
+                    <span className="font-mono text-xs text-navy/70 uppercase font-bold tracking-wider block mb-2">
+                      KEY DELIVERABLES &amp; IMPACT:
                     </span>
                     <ul className="space-y-2">
                       {exp.responsibilities.map((resp, i) => (
@@ -80,7 +66,7 @@ export const ExperienceSection: React.FC = () => {
                   </div>
 
                   <div className="pt-2">
-                    <span className="font-mono text-[10px] text-navy/60 uppercase font-bold tracking-wider block mb-2">
+                    <span className="font-mono text-xs text-navy/70 uppercase font-bold tracking-wider block mb-2">
                       TECHNOLOGIES APPLIED:
                     </span>
                     <div className="flex flex-wrap gap-2">
@@ -94,6 +80,22 @@ export const ExperienceSection: React.FC = () => {
                       ))}
                     </div>
                   </div>
+
+                  {exp.credentialUrl && (
+                    <div className="pt-4 border-t border-navy/10">
+                      <a
+                        href={exp.credentialUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-between w-full px-5 py-3 bg-navy text-white hover:bg-navy-dark transition-colors font-mono text-xs font-bold uppercase tracking-wider shadow-sm"
+                      >
+                        <span className="flex items-center gap-2">
+                          <span>View Certificate</span>
+                        </span>
+                        <ArrowUpRight className="w-4 h-4" />
+                      </a>
+                    </div>
+                  )}
                 </div>
 
               </div>

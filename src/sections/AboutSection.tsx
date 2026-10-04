@@ -7,14 +7,14 @@ export const AboutSection: React.FC = () => {
   const edu = education[0];
 
   return (
-    <section id="about" className="py-10 md:py-14 border-b border-navy/15">
+    <section id="about" className="py-8 md:py-12 border-b border-navy/15">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6 md:mb-8 pb-3 border-b border-navy/15">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2 sm:gap-4 mb-4 md:mb-5 pb-2.5 border-b border-navy/15">
           <div>
-            <span className="font-mono text-xs font-bold text-navy/70 tracking-widest uppercase">
-              01 // BACKGROUND
+            <span className="font-mono text-xs font-bold text-navy/70 tracking-wider">
+              01 // Background
             </span>
             <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold uppercase tracking-tight text-navy mt-1">
               About Me
@@ -25,10 +25,10 @@ export const AboutSection: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center lg:items-end">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
           
           {/* Left Column: Freestanding Transparent Cutout Photo */}
-          <div className="lg:col-span-5 flex justify-center w-full self-end pb-2 lg:pb-0">
+          <div className="lg:col-span-5 flex justify-center lg:justify-end items-start w-full">
             <AboutCutoutPortrait />
           </div>
 
@@ -51,22 +51,22 @@ export const AboutSection: React.FC = () => {
             </div>
 
             {/* Quick Education Summary Card */}
-            <div className="p-4 sm:p-4.5 bg-white border border-navy/20 shadow-sm font-mono text-xs">
-              <div className="flex items-center justify-between pb-2 border-b border-navy/15 text-navy font-bold">
-                <span>[ACADEMIC STATUS]</span>
-                <span className="text-yellow-hover font-bold">{edu.duration}</span>
+            <div className="mt-3 p-4 sm:p-5 bg-white border border-navy/20 shadow-sm w-full">
+              <div className="flex items-center justify-between pb-2 border-b border-navy/15 text-xs">
+                <span className="font-mono font-bold text-navy tracking-wider">Academic Status</span>
+                <span className="font-mono text-navy/70 font-semibold">{edu.duration}</span>
               </div>
-              <div className="mt-3 space-y-2 text-navy/80 text-[11px]">
+              <div className="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs font-sans text-navy/85">
                 <div>
-                  <span className="text-navy/50 block text-[10px] uppercase font-bold">PROGRAM:</span>
-                  <span className="font-semibold text-navy text-xs">{edu.degree}</span>
+                  <span className="text-navy/60 block text-xs uppercase font-mono font-semibold tracking-wider">Program:</span>
+                  <span className="font-semibold text-navy text-sm">{edu.degree}</span>
                 </div>
                 <div>
-                  <span className="text-navy/50 block text-[10px] uppercase font-bold">INSTITUTION:</span>
+                  <span className="text-navy/60 block text-xs uppercase font-mono font-semibold tracking-wider">Institution:</span>
                   <span className="text-navy">{edu.institution}, {edu.location}</span>
                 </div>
-                <div>
-                  <span className="text-navy/50 block text-[10px] uppercase font-bold">CORE TOPICS:</span>
+                <div className="sm:col-span-2 pt-1 border-t border-navy/10">
+                  <span className="text-navy/60 block text-xs uppercase font-mono font-semibold tracking-wider mb-1">Core Topics:</span>
                   <span className="text-navy">{edu.coursework.join(' · ')}</span>
                 </div>
               </div>

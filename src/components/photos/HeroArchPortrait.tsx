@@ -56,7 +56,7 @@ export const HeroArchPortrait: React.FC = () => {
       </div>
 
       {/* Clean specimen indicator */}
-      <div className="mt-3 text-center font-mono text-[11px] text-navy/70 uppercase tracking-wider">
+      <div className="mt-3 text-center font-mono text-xs text-navy/70 uppercase tracking-wider">
         Fig. 1.0 · Shashikant Raj
       </div>
     </div>

@@ -12,8 +12,8 @@ export const CertificationsSection: React.FC = () => {
         {/* Section Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12 pb-4 border-b border-navy/15">
           <div>
-            <span className="font-mono text-xs font-bold text-navy/70 tracking-widest uppercase">
-              05 // ACCREDITATIONS
+            <span className="font-mono text-xs font-bold text-navy/70 tracking-wider">
+              05 // Accreditations
             </span>
             <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold uppercase tracking-tight text-navy mt-1">
               Certifications
@@ -38,13 +38,13 @@ export const CertificationsSection: React.FC = () => {
                     <span className="w-2.5 h-2.5 bg-yellow border border-navy inline-block" />
                     <span className="font-bold text-navy/60">CERT 0{idx + 1}</span>
                   </div>
-                  <span className="px-2.5 py-0.5 bg-yellow/20 text-navy font-bold text-[11px] tracking-wider uppercase border border-navy/20">
+                  <span className="px-2.5 py-0.5 bg-[#FAF9F6] text-navy/70 font-mono text-xs font-semibold tracking-wider uppercase border border-navy/15">
                     {cert.date}
                   </span>
                 </div>
 
                 {/* Issuer */}
-                <div className="flex items-center gap-1.5 text-navy/70 font-mono text-[11px] font-bold uppercase tracking-wider mb-2">
+                <div className="flex items-center gap-1.5 text-navy/70 font-mono text-xs font-bold uppercase tracking-wider mb-2">
                   <Award className="w-3.5 h-3.5 text-navy flex-shrink-0" />
                   <span>{cert.issuer}</span>
                 </div>
@@ -60,9 +60,11 @@ export const CertificationsSection: React.FC = () => {
                     {cert.description}
                   </p>
                 )}
+              </div>
 
-                {/* Verification Status Pill */}
-                <div className="mt-5 inline-flex items-center gap-1.5 px-2.5 py-1 bg-[#FAF9F6] border border-navy/15 text-[11px] font-mono text-navy">
+              {/* Verification Status Pill - consistently positioned with mt-auto */}
+              <div className="mt-6 pt-2">
+                <div className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-[#FAF9F6] border border-navy/15 text-xs font-mono text-navy">
                   <CheckCircle2 className="w-3.5 h-3.5 text-navy" />
                   <span>Verified Credential</span>
                 </div>
@@ -74,7 +76,7 @@ export const CertificationsSection: React.FC = () => {
                   href={cert.credentialUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-between w-full px-4 py-2.5 bg-navy text-white hover:bg-navy-dark transition-colors font-mono text-xs font-bold uppercase tracking-wider shadow-sm"
+                  className="inline-flex items-center justify-between w-full px-5 py-3 bg-navy text-white hover:bg-navy-dark transition-colors font-mono text-xs font-bold uppercase tracking-wider shadow-sm"
                 >
                   <span className="flex items-center gap-2">
                     <span>View Certificate</span>

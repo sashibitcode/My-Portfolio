@@ -11,8 +11,8 @@ export const EducationSection: React.FC = () => {
         {/* Section Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12 pb-4 border-b border-navy/15">
           <div>
-            <span className="font-mono text-xs font-bold text-navy/70 tracking-widest uppercase">
-              06 // ACADEMICS
+            <span className="font-mono text-xs font-bold text-navy/70 tracking-wider">
+              06 // Academics
             </span>
             <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold uppercase tracking-tight text-navy mt-1">
               Education
@@ -34,7 +34,7 @@ export const EducationSection: React.FC = () => {
                 
                 {/* Left: Duration and Institution */}
                 <div className="md:col-span-4 space-y-2">
-                  <span className="inline-block px-3 py-1 bg-yellow text-navy font-mono text-xs font-bold uppercase tracking-wider border border-navy/20">
+                  <span className="inline-block px-2.5 py-1 bg-[#FAF9F6] text-navy/70 font-mono text-xs font-semibold uppercase tracking-wider border border-navy/15">
                     {edu.duration}
                   </span>
                   
@@ -50,7 +50,7 @@ export const EducationSection: React.FC = () => {
                 {/* Right: Degree and Coursework */}
                 <div className="md:col-span-8 border-t md:border-t-0 md:border-l border-navy/15 pt-4 md:pt-0 md:pl-8 space-y-4">
                   <div>
-                    <span className="font-mono text-[10px] text-navy/60 uppercase font-bold tracking-wider block mb-1">
+                    <span className="font-mono text-xs text-navy/70 uppercase font-bold tracking-wider block mb-1">
                       DEGREE PROGRAM:
                     </span>
                     <span className="font-display text-xl sm:text-2xl font-bold text-navy">
@@ -62,7 +62,7 @@ export const EducationSection: React.FC = () => {
                   </div>
 
                   <div className="pt-2">
-                    <span className="font-mono text-[10px] text-navy/60 uppercase font-bold tracking-wider block mb-2">
+                    <span className="font-mono text-xs text-navy/70 uppercase font-bold tracking-wider block mb-2">
                       VERIFIED ACADEMIC COURSEWORK:
                     </span>
                     <div className="flex flex-wrap gap-2">

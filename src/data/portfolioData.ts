@@ -175,7 +175,7 @@ export const portfolioData: PortfolioData = {
       id: 'ecommerce',
       title: 'Ecommerce Sales Analysis',
       tagline: 'Superstore retail sales trends, regional breakdown & profit margins',
-      category: 'RETAIL ANALYTICS',
+      category: 'Retail Analytics',
       accentColor: '#FF4400',
       summary:
         'I analyzed retail transactions from the Superstore dataset to find out which categories and regions drove real profit versus volume.',
@@ -197,7 +197,7 @@ export const portfolioData: PortfolioData = {
       id: 'ipl-cricket',
       title: 'IPL-Cricket-Analysis',
       tagline: 'Match & ball-by-ball delivery analytics using Python, SQL & Power BI',
-      category: 'SPORTS DATA',
+      category: 'Sports Data',
       accentColor: '#FF5500',
       summary:
         'Analyzed IPL match and delivery datasets using Python, EDA, and SQL to examine player trends, batting run rates, and bowling economy.',
@@ -219,7 +219,7 @@ export const portfolioData: PortfolioData = {
       id: 'covid-19',
       title: 'Covid-19-Analysis',
       tagline: 'Global pandemic time-series data cleaning, SQL reporting & Power BI',
-      category: 'PUBLIC HEALTH',
+      category: 'Public Health',
       accentColor: '#FF4400',
       summary:
         'Built an end-to-end analytics workflow on global COVID-19 data covering cases, active infection counts, recoveries, and mortality rates.',

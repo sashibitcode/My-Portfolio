@@ -43,8 +43,8 @@ export const ContactSection: React.FC = () => {
         {/* Section Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12 pb-4 border-b border-navy/15">
           <div>
-            <span className="font-mono text-xs font-bold text-navy/70 tracking-widest uppercase">
-              08 // CONNECT
+            <span className="font-mono text-xs font-bold text-navy/70 tracking-wider">
+              08 // Connect
             </span>
             <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold uppercase tracking-tight text-navy mt-1">
               Contact
@@ -66,7 +66,7 @@ export const ContactSection: React.FC = () => {
                 PRIMARY EMAIL
               </span>
               
-              <p className="font-display text-2xl sm:text-3xl font-bold text-navy break-all uppercase tracking-tight">
+              <p className="font-display text-2xl sm:text-3xl font-bold text-navy break-all lowercase tracking-tight">
                 {personal.email}
               </p>
               
@@ -74,23 +74,23 @@ export const ContactSection: React.FC = () => {
                 Feel free to email directly regarding Data Analyst opportunities, internships, or questions about my projects.
               </p>
 
-              <div className="mt-6 flex flex-wrap gap-2">
-                <button
-                  onClick={copyEmail}
-                  type="button"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-navy text-white hover:bg-navy-dark transition-colors font-mono text-xs font-bold uppercase tracking-wider shadow-sm"
-                >
-                  {copied ? <Check className="w-3.5 h-3.5 text-yellow" /> : <Copy className="w-3.5 h-3.5" />}
-                  <span>{copied ? 'Copied' : 'Copy Email'}</span>
-                </button>
-
+              <div className="mt-6 flex flex-wrap gap-3">
                 <a
                   href={`mailto:${personal.email}`}
-                  className="inline-flex items-center gap-2 px-5 py-2.5 border-2 border-navy text-navy hover:bg-navy hover:text-white transition-colors font-mono text-xs font-bold uppercase tracking-wider"
+                  className="inline-flex items-center gap-2 px-6 py-3 border-2 border-navy bg-navy text-white hover:bg-navy-dark transition-colors font-mono text-xs font-bold uppercase tracking-wider shadow-sm"
                 >
                   <Mail className="w-3.5 h-3.5" />
                   <span>Open Client</span>
                 </a>
+
+                <button
+                  onClick={copyEmail}
+                  type="button"
+                  className="inline-flex items-center gap-2 px-6 py-3 border-2 border-navy text-navy hover:bg-navy hover:text-white transition-colors font-mono text-xs font-bold uppercase tracking-wider"
+                >
+                  {copied ? <Check className="w-3.5 h-3.5 text-yellow" /> : <Copy className="w-3.5 h-3.5" />}
+                  <span>{copied ? 'Copied' : 'Copy Email'}</span>
+                </button>
               </div>
             </div>
 
@@ -136,13 +136,10 @@ export const ContactSection: React.FC = () => {
 
           {/* Right Column: Honest Mailto Form */}
           <div className="lg:col-span-7 bg-white border border-navy/20 p-6 sm:p-8 shadow-sm">
-            <div className="pb-4 border-b border-navy/15 flex items-center justify-between">
+            <div className="pb-4 border-b border-navy/15">
               <h3 className="font-display text-2xl sm:text-3xl font-bold text-navy uppercase tracking-tight">
                 Send a Message
               </h3>
-              <span className="font-mono text-xs text-navy/60 uppercase bg-yellow/20 px-2 py-0.5 border border-navy/15">
-                MAILTO PROTOCOL
-              </span>
             </div>
 
             <form onSubmit={handleSubmit} className="mt-6 space-y-4 font-sans">
@@ -200,16 +197,16 @@ export const ContactSection: React.FC = () => {
               </div>
 
               <div className="pt-2 flex flex-col sm:flex-row items-center justify-between gap-3">
-                <span className="text-[11px] font-mono text-navy/60">
+                <span className="text-xs font-mono text-navy/60">
                   Honest mailto dispatch: composes directly to {personal.email}
                 </span>
 
                 <button
                   type="submit"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3 bg-navy text-white hover:bg-navy-dark transition-colors font-mono text-xs font-bold uppercase tracking-wider shadow-sm"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 border-2 border-navy bg-navy text-white hover:bg-navy-dark transition-colors font-mono text-xs font-bold uppercase tracking-wider shadow-sm"
                 >
                   <Send className="w-3.5 h-3.5" />
-                  <span>Transmit Email</span>
+                  <span>Compose Email</span>
                 </button>
               </div>
 

@@ -35,9 +35,9 @@ export const HeroSection: React.FC = () => {
               {personal.name}
             </h1>
 
-            {/* Navy Label Box: Solid navy rounded rectangle with white text */}
+            {/* Non-button Editorial Tag */}
             <div className="mt-3 sm:mt-4 mb-4 sm:mb-6">
-              <span className="inline-block bg-navy text-white px-5 sm:px-6 py-2 sm:py-2.5 rounded-xl font-display text-base sm:text-xl font-semibold tracking-widest uppercase shadow-sm">
+              <span className="inline-block bg-yellow/30 border-2 border-navy text-navy px-4 sm:px-5 py-1.5 font-mono text-xs sm:text-sm font-bold tracking-widest uppercase select-none">
                 DATA ANALYST
               </span>
             </div>
@@ -47,11 +47,11 @@ export const HeroSection: React.FC = () => {
               B.Tech Computer Science student at Jagannath University, Jaipur, specializing in Data Analytics, extracting actionable insights with Python, SQL, and Power BI.
             </p>
 
-            {/* Action Buttons */}
+            {/* Action Buttons: Unified height and border-2 alignment */}
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4 w-full sm:w-auto">
               <button
                 onClick={scrollToProjects}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 sm:px-8 py-3.5 bg-navy text-white hover:bg-navy-dark rounded-md font-bold text-sm uppercase tracking-wider transition-colors shadow-sm"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 border-2 border-navy bg-navy text-white hover:bg-navy-dark hover:border-navy-dark font-mono text-xs font-bold uppercase tracking-wider transition-colors shadow-sm"
               >
                 <span>View Projects</span>
                 <ArrowDownRight className="w-4 h-4" />
@@ -60,7 +60,7 @@ export const HeroSection: React.FC = () => {
               <a
                 href={resume.path}
                 download={resume.filename}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 sm:px-8 py-3.5 border-2 border-navy text-navy hover:bg-navy hover:text-white rounded-md font-bold text-sm uppercase tracking-wider transition-colors"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 border-2 border-navy text-navy hover:bg-navy hover:text-white font-mono text-xs font-bold uppercase tracking-wider transition-colors"
               >
                 <FileDown className="w-4 h-4" />
                 <span>Download Resume</span>
