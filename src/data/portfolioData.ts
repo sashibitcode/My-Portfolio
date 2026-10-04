@@ -277,6 +277,14 @@ export const portfolioData: PortfolioData = {
       credentialUrl: 'https://drive.google.com/file/d/1sLa47xdf01y6WnzvV9p3yEL_owlbNsdv/view',
       description: 'Explored Generative AI concepts and practical AI workflows through hands-on learning.',
     },
+    {
+      id: 'hackerrank-sql-intermediate',
+      title: 'SQL (Intermediate)',
+      issuer: 'HackerRank',
+      date: 'October 2026',
+      credentialUrl: 'https://www.hackerrank.com/certificates/558285241f1c',
+      description: 'Demonstrated proficiency in complex queries, multi-table joins, subqueries, aggregations, window functions, and relational database analysis.',
+    },
   ],
   resume: {
     filename: 'Shashikant-Raj-Resume.pdf',

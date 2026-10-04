@@ -25,7 +25,7 @@ export const CertificationsSection: React.FC = () => {
         </div>
 
         {/* Certifications Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-6 sm:gap-8">
           {certifications.map((cert, idx) => (
             <div
               key={cert.id}
@@ -76,7 +76,7 @@ export const CertificationsSection: React.FC = () => {
                   href={cert.credentialUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-between w-full px-5 py-3 bg-navy text-white hover:bg-navy-dark transition-colors font-mono text-xs font-bold uppercase tracking-wider shadow-sm"
+                  className="inline-flex items-center justify-between w-full px-5 py-3 border-2 border-navy bg-navy text-white hover:bg-navy-dark transition-colors font-mono text-xs font-bold uppercase tracking-wider shadow-sm"
                 >
                   <span className="flex items-center gap-2">
                     <span>View Certificate</span>
