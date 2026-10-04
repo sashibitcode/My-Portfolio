@@ -260,6 +260,7 @@ export const portfolioData: PortfolioData = {
       date: 'July 2024',
       credentialUrl: 'https://drive.google.com/file/d/1kZddy3YxtR_5xhyI9eO3qiV8f9T3Sk5N/view',
       description: 'Core Python syntax, data structures, OOP patterns, and algorithmic logic.',
+      imageUrl: `${baseUrl}images/certificates/pcap-python.webp`,
     },
     {
       id: 'forage-data-vis',
@@ -268,6 +269,7 @@ export const portfolioData: PortfolioData = {
       date: 'July 2025',
       credentialUrl: 'https://drive.google.com/file/d/1Dm0Vs2yuJGtHb-YrgBEfFAWIyfg24Iff/view',
       description: 'Translating business metrics into clean, uncluttered visual dashboards for decision-makers.',
+      imageUrl: `${baseUrl}images/certificates/forage-data-vis.webp`,
     },
     {
       id: 'genai-studio',
@@ -276,6 +278,7 @@ export const portfolioData: PortfolioData = {
       date: 'July 2025',
       credentialUrl: 'https://drive.google.com/file/d/1sLa47xdf01y6WnzvV9p3yEL_owlbNsdv/view',
       description: 'Explored Generative AI concepts and practical AI workflows through hands-on learning.',
+      imageUrl: `${baseUrl}images/certificates/genai-studio.webp`,
     },
     {
       id: 'hackerrank-sql-intermediate',
@@ -284,6 +287,7 @@ export const portfolioData: PortfolioData = {
       date: 'October 2026',
       credentialUrl: 'https://www.hackerrank.com/certificates/558285241f1c',
       description: 'Demonstrated proficiency in complex queries, multi-table joins, subqueries, aggregations, window functions, and relational database analysis.',
+      imageUrl: `${baseUrl}images/certificates/hackerrank-sql-intermediate.webp`,
     },
   ],
   resume: {

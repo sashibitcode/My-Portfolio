@@ -65,6 +65,7 @@ export interface CertificationItem {
   date: string;
   credentialUrl: string;
   description?: string;
+  imageUrl?: string;
 }
 
 export interface ExperienceItem {
