@@ -261,7 +261,7 @@ export const portfolioData: PortfolioData = {
     },
     {
       id: 'quickdownload',
-      title: 'SAVEALL - Pro Media Downloader',
+      title: 'QuickDownload',
       tagline: 'Ultra-fast, lossless full-stack media extraction pipeline for YouTube & Instagram',
       category: 'Full-Stack & Media Pipelines',
       accentColor: '#10B981',
