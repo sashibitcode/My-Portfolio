@@ -54,7 +54,7 @@ Shashikant Raj is an India-based Data Analyst and Computer Science undergraduate
 - **Source Code:** https://github.com/sashibitcode/sas-ai
 - **Live Demo:** https://sasai-chat.vercel.app/
 
-### Project 2: SAVEALL - Pro Media Downloader
+### Project 2: QuickDownload - Media Downloader
 - **Domain:** High-Performance Media Extraction, Asynchronous Distributed Pipelines
 - **Summary:** Industrial-grade media extraction platform engineered with Python FastAPI backend and React 19 frontend.
 - **Key Findings & Engineering Highlights:**
