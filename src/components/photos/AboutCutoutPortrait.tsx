@@ -17,8 +17,8 @@ export const AboutCutoutPortrait: React.FC = () => {
             alt="Shashikant Raj - Candidate Profile"
             width={579}
             height={1161}
-            loading="eager"
-            decoding="sync"
+            loading="lazy"
+            decoding="async"
             className="w-auto h-auto max-w-[90vw] sm:max-w-[420px] md:max-w-[460px] lg:max-w-none max-h-[480px] sm:max-h-[530px] lg:max-h-[560px] xl:max-h-[590px] object-contain drop-shadow-[0_12px_28px_rgba(11,37,69,0.16)] select-none transition-transform duration-300 group-hover:scale-[1.01]"
           />
         </picture>

@@ -107,7 +107,7 @@ export const ContactSection: React.FC = () => {
                     key={item.platform}
                     href={item.url}
                     target="_blank"
-                    rel="noopener noreferrer"
+                    rel="noopener noreferrer me"
                     className="flex items-center justify-between p-3 border border-navy/15 hover:border-navy hover:bg-[#FAF9F6] transition-colors group"
                   >
                     <div className="flex items-center gap-3">

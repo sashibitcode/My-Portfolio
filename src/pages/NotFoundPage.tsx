@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Home, RefreshCw } from 'lucide-react';
+import { SEO } from '@/components/common/SEO';
 
 interface NotFoundPageProps {
   onBackToHome: () => void;
@@ -10,6 +11,10 @@ export const NotFoundPage: React.FC<NotFoundPageProps> = ({ onBackToHome }) => {
 
   return (
     <div className="min-h-screen flex items-center justify-center p-4 bg-notebook-grid text-navy font-mono text-xs">
+      <SEO
+        title="404: Record Not Found | Shashikant Raj (SASHIBITCODE)"
+        description="The requested path does not map to any active table or record in Shashikant Raj's portfolio ledger."
+      />
       <div className="max-w-md w-full border-2 border-navy bg-white p-8 shadow-sm">
         <div className="flex items-center justify-between pb-3 border-b border-navy/15 text-xs text-navy/70">
           <span>HTTP_STATUS // 404</span>

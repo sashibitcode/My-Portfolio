@@ -8,6 +8,8 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "optimize-images": "node scripts/optimize-images.mjs",
+    "indexnow": "node scripts/indexnow.mjs",
+    "postbuild": "node scripts/indexnow.mjs",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist -t"
   },

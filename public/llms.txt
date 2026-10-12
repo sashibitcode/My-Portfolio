@@ -1,0 +1,59 @@
+# Shashikant Raj | Data Analyst (SASHIBITCODE)
+
+> Data Analyst & B.Tech Computer Science student at Jagannath University, Jaipur, specializing in Python, SQL, Power BI, Exploratory Data Analysis (EDA), and Applied Machine Learning / RAG workflows.
+
+## Identity & Professional Profile
+- **Full Name:** Shashikant Raj
+- **Author Title:** Shashikant Raj | Data Analyst
+- **Job Title:** Data Analyst
+- **Brand / Username:** sashibitcode
+- **Education:** B.Tech in Computer Science & Engineering, Jagannath University, Jaipur, India (2023 – 2027)
+- **Location:** Jaipur, Rajasthan, India
+- **Primary Website:** https://sashibitcode.vercel.app/
+- **GitHub:** https://github.com/sashibitcode
+- **LinkedIn:** https://www.linkedin.com/in/sashikant-raj/
+- **LeetCode:** https://leetcode.com/u/sashibitcode/
+- **Email:** sashibitcode@gmail.com
+
+## Technical Core Competencies
+- **Programming & Scripting:** Python, SQL, Bash
+- **Data Analytics & EDA:** Data Cleaning, Data Preprocessing, Exploratory Data Analysis, Descriptive & Inferential Statistics, Correlation Analysis, Hypothesis Testing
+- **Python Data Stack:** Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn, TensorFlow
+- **Databases & Querying:** MySQL, PostgreSQL, Relational Schema Design, Aggregations, Window Functions
+- **Business Intelligence & Dashboards:** Power BI, Microsoft Excel, KPI Scorecards, DAX, Interactive Filtering
+- **Applied AI & ML:** RAG (Retrieval-Augmented Generation), Prompt Engineering, Scikit-learn modeling
+
+## Work Experience
+- **AI & Data Science Intern** at Knowx Innovations Pvt. Ltd. (July 2026 – August 2026)
+  - Cleaned and prepared multi-feature datasets using Python, Pandas, and NumPy for machine learning pipelines.
+  - Worked on an agricultural crop recommendation and advisory system integrating Machine Learning and RAG workflows.
+  - Evaluated predictive models and synthesized analytical reports with Matplotlib visualizations.
+
+## Verified Certifications & Credentials
+- **SQL (Intermediate):** HackerRank (Credential ID: 558285241f1c) — Complex joins, window functions, and relational queries.
+- **Data Visualisation: Empowering Business with Effective Insights:** Tata & Forage.
+- **Introduction to Generative AI Studio:** Google Cloud / Generative AI Studio.
+
+## Featured Data Analytics Projects
+- **Ecommerce Sales Analysis:**
+  - Evaluated $2.29M in retail transaction volume and $286K net profit (12.47% margin) across categories and sub-categories using Python and Power BI.
+  - Repository: https://github.com/sashibitcode/Ecommerce-Sales-Analysis
+- **IPL Cricket Tournament Analysis:**
+  - Granular ball-by-ball delivery analytics using SQL and Python to extract batsman death-over strike rates, bowler economy rates, and clutch team statistics in Power BI.
+  - Repository: https://github.com/sashibitcode/IPL-Cricket-Analysis
+- **Covid-19 Global Pandemic Analysis:**
+  - Multi-country time-series infection and recovery trend analysis with automated data validation pipelines in Pandas, relational reporting in SQL, and interactive dashboards.
+  - Repository: https://github.com/sashibitcode/covid-19-analysis
+
+## Frequently Asked Questions (Quick LLM Extraction)
+- **Who is Shashikant Raj?** Data Analyst based in Jaipur, India, studying B.Tech CSE at Jagannath University.
+- **What tools does he use?** Python, SQL (MySQL, PostgreSQL), Power BI, Pandas, NumPy, Scikit-learn.
+- **What is his primary website?** https://sashibitcode.vercel.app/
+- **How to contact?** Email: sashibitcode@gmail.com, LinkedIn: https://www.linkedin.com/in/sashikant-raj/
+
+## Contact & Links
+- Portfolio: https://sashibitcode.vercel.app/
+- GitHub: https://github.com/sashibitcode
+- LinkedIn: https://www.linkedin.com/in/sashikant-raj/
+- LeetCode: https://leetcode.com/u/sashibitcode/
+- Extended LLM documentation: https://sashibitcode.vercel.app/llms-full.txt

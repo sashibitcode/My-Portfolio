@@ -35,7 +35,7 @@ export const Footer: React.FC = () => {
                 key={s.platform}
                 href={s.url}
                 target={s.platform !== 'email' ? '_blank' : undefined}
-                rel={s.platform !== 'email' ? 'noopener noreferrer' : undefined}
+                rel={s.platform !== 'email' ? 'noopener noreferrer me' : undefined}
                 className="py-1 text-navy/80 hover:text-navy font-medium underline underline-offset-4 transition-colors"
               >
                 {s.label}

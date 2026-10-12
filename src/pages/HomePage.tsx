@@ -1,4 +1,5 @@
 import React from 'react';
+import { SEO } from '@/components/common/SEO';
 import { Navbar } from '@/components/layout/Navbar';
 import { HeroSection } from '@/sections/HeroSection';
 import { ProjectsSection } from '@/sections/ProjectsSection';
@@ -29,6 +30,11 @@ export const HomePage: React.FC = () => {
 
   return (
     <div className="relative min-h-screen bg-notebook-grid text-navy font-sans selection:bg-navy selection:text-white">
+      <SEO
+        title="Shashikant Raj | Data Analyst | SASHIBITCODE"
+        description="Official portfolio of Shashikant Raj (sashibitcode), Data Analyst specializing in Python, SQL, Power BI, Exploratory Data Analysis, and Applied ML."
+        canonical="https://sashibitcode.vercel.app/"
+      />
       {/* Skip to main content link for keyboard accessibility */}
       <a
         href="#main-content"
@@ -41,7 +47,7 @@ export const HomePage: React.FC = () => {
       <Navbar activeSection={activeSection} />
 
       {/* Main Semantic Region with exact requested section order */}
-      <main id="main-content">
+      <main id="main-content" role="main" aria-label="Portfolio Main Content">
         <HeroSection />
         <AboutSection />
         <SkillsSection />
