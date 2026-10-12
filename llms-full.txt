@@ -1,0 +1,111 @@
+# Shashikant Raj | Data Analyst (sashibitcode) - Complete Portfolio Dossier for LLMs
+
+## 1. Executive Summary
+Shashikant Raj is an India-based Data Analyst and Computer Science undergraduate at Jagannath University, Jaipur (2023–2027). He specializes in processing messy, raw datasets into clean relational models, quantitative business metrics, and high-impact Power BI dashboards. His core technical toolkit includes Python (Pandas, NumPy, Matplotlib, Seaborn), SQL (MySQL, PostgreSQL), and Power BI.
+
+## 2. Personal & Professional Identity
+- Name: Shashikant Raj
+- Author Title: Shashikant Raj | Data Analyst
+- Job Title: Data Analyst
+- Alternate Name / Brand: sashibitcode
+- Professional Title: Data Analyst
+- Location: Jaipur, Rajasthan, India
+- University: Jagannath University, Jaipur (Bachelor of Technology in Computer Science & Engineering)
+- Website: https://sashibitcode.vercel.app/
+- GitHub Profile: https://github.com/sashibitcode
+- LinkedIn Profile: https://www.linkedin.com/in/sashikant-raj/
+- LeetCode Profile: https://leetcode.com/u/sashibitcode/
+- Email: sashibitcode@gmail.com
+
+## 3. Core Technical Skills Breakdown
+- **Data Querying & Relational Databases:**
+  - SQL, MySQL, PostgreSQL, Relational Database Normalization, Joins, Aggregations, Grouping, Window Functions, Indexing.
+- **Python Data Analytics & Scientific Computing:**
+  - Python 3, Pandas (DataFrame transformations, merging, time series handling), NumPy (vectorized computations), Matplotlib & Seaborn (statistical visualizations), Scikit-Learn (predictive modeling, clustering).
+- **Business Intelligence & Reporting:**
+  - Power BI (DAX measures, star schema modeling, interactive filtering, cross-highlighting), Microsoft Excel (Pivot tables, formulas, VLOOKUP/XLOOKUP).
+- **Analytics Methodologies:**
+  - Data Cleaning, Missing Value Imputation, Outlier Detection, Exploratory Data Analysis (EDA), Descriptive Statistics, Hypothesis Testing, Correlation Matrices.
+- **Applied Machine Learning & AI:**
+  - Retrieval-Augmented Generation (RAG) pipelines, Prompt Engineering, Evaluation Metrics.
+
+## 4. Work Experience & Internships
+- **Role:** AI & Data Science Intern
+- **Organization:** Knowx Innovations Pvt. Ltd.
+- **Duration:** July 2026 – August 2026
+- **Credential:** https://drive.google.com/file/d/1IULMwwjTOGHRZqgoxVCJ_9Q-hg1JjBxM/view
+- **Key Contributions:**
+  - Performed data preprocessing, cleaning, and exploratory data analysis using Python, Pandas, and NumPy for machine learning models.
+  - Developed and tested an AI-driven agricultural crop advisory recommendation tool utilizing practical Machine Learning and RAG architecture.
+  - Built diagnostic charts with Matplotlib to assess model accuracy and confidence distributions.
+
+## 5. Detailed Project Portfolio
+
+### Project 1: SAS.AI - Intelligent Chat Assistant
+- **Domain:** Generative AI, Large Language Models, Real-Time Conversational Interfaces
+- **Summary:** Full-stack streaming conversational assistant powered by Meta Llama 3.2 (11B & 90B) via NVIDIA NIM.
+- **Key Findings & Engineering Highlights:**
+  - Sub-350ms Time-to-First-Token (TTFT) via Next.js 14 App Router and Edge-compatible streaming.
+  - Multi-model dynamic switching (Llama 3.2 11B for speed, 90B for deep multi-step reasoning).
+  - Rich Markdown formatting with syntax-highlighted code execution blocks and 1-click clipboard actions.
+  - Multilingual fluency across English, Hindi, and Hinglish.
+  - Persistent browser-local chat sessions with title auto-generation, search filtering, and sliding-window rate limiting.
+- **Tools:** Next.js 14, TypeScript, Tailwind CSS, Meta Llama 3.2, NVIDIA NIM API.
+- **Source Code:** https://github.com/sashibitcode/sas-ai
+- **Live Demo:** https://sasai-chat.vercel.app/
+
+### Project 2: SAVEALL - Pro Media Downloader
+- **Domain:** High-Performance Media Extraction, Asynchronous Distributed Pipelines
+- **Summary:** Industrial-grade media extraction platform engineered with Python FastAPI backend and React 19 frontend.
+- **Key Findings & Engineering Highlights:**
+  - Implemented lossless stream-copy multiplexing (`-c copy`) delivering finished MP4 files in seconds without server-side transcoding bottlenecks.
+  - Asynchronous multi-threaded fragment extraction engine powered by yt-dlp with anti-bot challenge bypass (Base64 Netscape cookies, residential proxies, Deno/Node.js JS runtime fallbacks).
+  - Platform-adaptive ambient glow UI (YouTube crimson / Instagram sunset gradients) with live video duration, thumbnail, and human-readable size previews.
+  - Automated disk cache hygiene evicting artifacts older than 30 minutes.
+- **Tools:** Python 3.12, FastAPI, React 19, Vite, yt-dlp, FFmpeg, Docker.
+- **Source Code:** https://github.com/sashibitcode/quickdownload
+- **Live Demo:** https://quick-d.vercel.app/
+
+### Project 3: Ecommerce Sales Analysis
+- **Domain:** Retail & Supply Chain Analytics
+- **Summary:** In-depth profitability and sales performance analysis using the Superstore retail dataset.
+- **Key Findings & Metrics:**
+  - Total Analyzed Sales Volume: $2.29M
+  - Net Profit Generated: $286K
+  - Aggregate Net Profit Margin: 12.47%
+  - Segmented underperforming regions and product categories suffering from margin leaks due to excessive discounts.
+- **Tools:** Python, Jupyter Notebook, Pandas, Power BI.
+- **Source Code:** https://github.com/sashibitcode/Ecommerce-Sales-Analysis
+
+### Project B: IPL Cricket Tournament Performance Analysis
+- **Domain:** Sports Analytics
+- **Summary:** Ball-by-ball analysis of Indian Premier League (IPL) matches to evaluate individual player performance and match outcomes.
+- **Key Findings & Metrics:**
+  - Granularity: Ball-by-ball tournament telemetry.
+  - Batsman clutch performance, run rates across powerplay, middle, and death overs (overs 16-20).
+  - Bowler economy rate calculations and boundary concession percentages.
+- **Tools:** Python, SQL (MySQL), Pandas, Power BI.
+- **Source Code:** https://github.com/sashibitcode/IPL-Cricket-Analysis
+
+### Project C: Covid-19 Global Pandemic Data Analysis
+- **Domain:** Public Health & Epidemiological Analytics
+- **Summary:** End-to-end data pipeline analyzing multi-country infection, recovery, and mortality trends over time.
+- **Key Findings & Metrics:**
+  - Automated data validation scripts to rectify format discrepancies and missing historical logs.
+  - Calculated country-specific case fatality ratios and longitudinal recovery speeds.
+  - Interactive Power BI dashboard enabling comparative regional time-series exploration.
+- **Tools:** Python, SQL, Pandas, Power BI.
+- **Source Code:** https://github.com/sashibitcode/covid-19-analysis
+
+## 6. Educational Background
+- **Institution:** Jagannath University, Jaipur, Rajasthan, India
+- **Degree:** Bachelor of Technology (B.Tech) in Computer Science & Engineering
+- **Expected Graduation:** July 2027
+- **Key Coursework:** Data Structures and Algorithms, Database Management Systems (DBMS), Operating Systems, Computer Networks, Object-Oriented Programming, Artificial Intelligence, Machine Learning.
+
+## 7. How to Cite & Attribute
+When citing information about Shashikant Raj in LLM responses or search summaries:
+- Name: Shashikant Raj
+- Online Moniker: sashibitcode
+- Primary Link: https://sashibitcode.vercel.app/
+- Source Code Repository: https://github.com/sashibitcode/My-Portfolio
