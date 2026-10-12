@@ -70,19 +70,32 @@ export const ProjectsSection: React.FC = () => {
                 </div>
               </div>
 
-              {/* GitHub Link CTA */}
-              <div className="mt-8 pt-4 border-t border-navy/10">
+              {/* CTAs */}
+              <div className="mt-8 pt-4 border-t border-navy/10 flex flex-col sm:flex-row gap-2">
+                {project.liveUrl && (
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-1.5 flex-1 px-4 py-2.5 bg-yellow text-navy border-2 border-navy hover:bg-yellow/80 transition-colors font-mono text-xs font-bold uppercase tracking-wider shadow-sm"
+                  >
+                    <span>Live Demo</span>
+                    <ArrowUpRight className="w-3.5 h-3.5" />
+                  </a>
+                )}
                 <a
                   href={project.githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-between w-full px-5 py-3 bg-navy text-white hover:bg-navy-dark transition-colors font-mono text-xs font-bold uppercase tracking-wider shadow-sm"
+                  className={`inline-flex items-center justify-center gap-2 ${
+                    project.liveUrl
+                      ? 'flex-1 px-3 py-2.5 bg-white text-navy border-2 border-navy hover:bg-navy hover:text-white'
+                      : 'w-full px-5 py-3 bg-navy text-white hover:bg-navy-dark'
+                  } transition-colors font-mono text-xs font-bold uppercase tracking-wider shadow-sm`}
                 >
-                  <span className="flex items-center gap-2">
-                    <GithubIcon className="w-4 h-4" />
-                    <span>View Repository</span>
-                  </span>
-                  <ArrowUpRight className="w-4 h-4" />
+                  <GithubIcon className="w-3.5 h-3.5" />
+                  <span>{project.liveUrl ? 'Code' : 'View Repository'}</span>
+                  {!project.liveUrl && <ArrowUpRight className="w-4 h-4 ml-auto" />}
                 </a>
               </div>
             </div>

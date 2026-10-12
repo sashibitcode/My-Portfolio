@@ -237,6 +237,50 @@ export const portfolioData: PortfolioData = {
       githubUrl: 'https://github.com/sashibitcode/covid-19-analysis',
       sqlQuery: `SELECT country, region, date, cumulative_cases, cumulative_recoveries, ROUND((cumulative_deaths/cumulative_cases)*100, 2) AS fatality_rate FROM global_covid_timeseries WHERE date = '2021-12-31';`,
     },
+    {
+      id: 'sas-ai',
+      title: 'SAS.AI - Intelligent Chat Assistant',
+      tagline: 'Real-time streaming LLM conversational assistant powered by Meta Llama 3.2 via NVIDIA NIM',
+      category: 'Generative AI & LLMs',
+      accentColor: '#6366F1',
+      summary:
+        'A full-stack AI conversation application powered by Next.js 14 and Meta Llama 3.2 (11B & 90B) via NVIDIA NIM. Features sub-second token streaming, rich syntax-highlighted code rendering, persistent conversation history, and multilingual fluency.',
+      bullets: [
+        'Engineered an ultra-low latency token streaming architecture with sub-350ms time-to-first-token (TTFT) using Next.js 14 App Router and NVIDIA NIM.',
+        'Implemented Meta Llama 3.2 11B and 90B model selection with syntax-highlighted code execution and full multilingual support (English, Hindi, Hinglish).',
+        'Built persistent localStorage conversation sessions with title auto-generation, search filtering, and sliding window rate limiting.',
+      ],
+      technologies: ['Next.js 14', 'TypeScript', 'Tailwind CSS', 'Meta Llama 3.2', 'NVIDIA NIM', 'Streaming API'],
+      metrics: [
+        { label: 'Latency', value: '< 350ms TTFT' },
+        { label: 'Models', value: 'Llama 3.2 11B/90B' },
+        { label: 'Interface', value: 'Live Token Stream' },
+      ],
+      githubUrl: 'https://github.com/sashibitcode/sas-ai',
+      liveUrl: 'https://sasai-chat.vercel.app/',
+    },
+    {
+      id: 'quickdownload',
+      title: 'SAVEALL - Pro Media Downloader',
+      tagline: 'Ultra-fast, lossless full-stack media extraction pipeline for YouTube & Instagram',
+      category: 'Full-Stack & Media Pipelines',
+      accentColor: '#10B981',
+      summary:
+        'Industrial-grade media extraction platform engineered with a Python FastAPI backend and React 19 frontend. Implemented stream-copy multiplexing for instantaneous MP4 packaging and anti-bot challenge bypass.',
+      bullets: [
+        'Developed an asynchronous Python FastAPI download engine integrating yt-dlp with multi-threaded fragment extraction and automatic cookie/proxy rotation.',
+        'Implemented progressive stream prioritization and zero-transcode stream copying (-c copy) delivering finished MP4 files in seconds.',
+        'Designed a cinematic cyberpunk UI in React 19 with platform-adaptive ambient glows, live video metadata previews, and automated storage hygiene.',
+      ],
+      technologies: ['Python', 'FastAPI', 'React 19', 'Vite', 'yt-dlp', 'FFmpeg', 'Docker'],
+      metrics: [
+        { label: 'Packaging', value: 'Zero-Transcode' },
+        { label: 'Backend', value: 'Python FastAPI' },
+        { label: 'Extraction', value: 'Multi-Threaded' },
+      ],
+      githubUrl: 'https://github.com/sashibitcode/quickdownload',
+      liveUrl: 'https://quick-d.vercel.app/',
+    },
   ],
   experience: [
     {

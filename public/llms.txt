@@ -34,7 +34,15 @@
 - **Data Visualisation: Empowering Business with Effective Insights:** Tata & Forage.
 - **Introduction to Generative AI Studio:** Google Cloud / Generative AI Studio.
 
-## Featured Data Analytics Projects
+## Featured Projects & Applications
+- **SAS.AI - Intelligent Chat Assistant:**
+  - Real-time streaming conversational assistant powered by Meta Llama 3.2 (11B & 90B) via NVIDIA NIM and Next.js 14 App Router. Features sub-350ms TTFT, syntax-highlighted code execution, persistent history, and multilingual fluency.
+  - Repository: https://github.com/sashibitcode/sas-ai
+  - Live Demo: https://sasai-chat.vercel.app/
+- **SAVEALL - Pro Media Downloader:**
+  - Full-stack media extraction pipeline built with Python FastAPI and React 19. Implements zero-transcode stream copying (-c copy) for instantaneous MP4 packaging, multi-threaded yt-dlp downloads, and anti-bot challenge bypass.
+  - Repository: https://github.com/sashibitcode/quickdownload
+  - Live Demo: https://quick-d.vercel.app/
 - **Ecommerce Sales Analysis:**
   - Evaluated $2.29M in retail transaction volume and $286K net profit (12.47% margin) across categories and sub-categories using Python and Power BI.
   - Repository: https://github.com/sashibitcode/Ecommerce-Sales-Analysis
