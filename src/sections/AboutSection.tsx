@@ -11,18 +11,10 @@ export const AboutSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2 sm:gap-4 mb-4 md:mb-5 pb-2.5 border-b border-navy/15">
-          <div>
-            <span className="font-mono text-xs font-bold text-navy/70 tracking-wider">
-              01 // Background
-            </span>
-            <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold uppercase tracking-tight text-navy mt-1">
-              About Me
-            </h2>
-          </div>
-          <p className="text-sm font-sans text-navy/70 max-w-md">
-            Candidate profile, methodology, and verified academic record from Jagannath University, Jaipur.
-          </p>
+        <div className="mb-4 md:mb-5 pb-2.5 border-b border-navy/15">
+          <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold uppercase tracking-tight text-navy">
+            About Me
+          </h2>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">

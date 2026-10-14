@@ -8,35 +8,21 @@ export const SkillsSection: React.FC = () => {
     <section id="skills" className="py-20 md:py-28 border-b border-navy/15">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Header with directly grouped description */}
+        {/* Section Header */}
         <div className="mb-10 pb-4 border-b border-navy/15">
-          <span className="font-mono text-xs font-bold text-navy/70 tracking-wider">
-            02 // Capabilities
-          </span>
-          <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-navy mt-1">
+          <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-navy">
             Technical Skills
           </h2>
-          <p className="mt-2 text-sm font-sans text-navy/70 max-w-xl leading-relaxed">
-            Plain categorized inventory of programming languages, analytical frameworks, and data visualization tools.
-          </p>
         </div>
 
         {/* Natural Height Grid (No dead whitespace) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 items-start">
-          {skills.map((category, idx) => (
+          {skills.map((category) => (
             <div
               key={category.id}
               className="bg-white border border-navy/20 p-6 sm:p-7 shadow-sm rounded-none flex flex-col justify-between"
             >
               <div>
-                {/* Header with clear category numbering */}
-                <div className="flex items-center justify-between pb-3 mb-4 border-b border-navy/15">
-                  <span className="font-mono text-xs font-bold text-navy/50">
-                    GROUP 0{idx + 1}
-                  </span>
-                  <span className="font-mono text-xs text-navy/40 font-semibold">[0{idx + 1}]</span>
-                </div>
-
                 <h3 className="font-display text-2xl font-bold text-navy tracking-tight">
                   {category.name}
                 </h3>

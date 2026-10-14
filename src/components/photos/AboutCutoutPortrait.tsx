@@ -23,12 +23,6 @@ export const AboutCutoutPortrait: React.FC = () => {
           />
         </picture>
       </div>
-
-      {/* Specimen Caption directly below with compact top margin */}
-      <div className="mt-2 text-center font-mono text-xs text-navy/70 uppercase tracking-wider font-semibold">
-        FIG. 2.0 · SHASHIKANT RAJ (CANDIDATE PROFILE)
-      </div>
-
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 import { portfolioData } from '@/data/portfolioData';
-import { ArrowUp } from 'lucide-react';
+import { ArrowUp, ArrowUpRight } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   const { personal, social } = portfolioData;
@@ -36,9 +36,13 @@ export const Footer: React.FC = () => {
                 href={s.url}
                 target={s.platform !== 'email' ? '_blank' : undefined}
                 rel={s.platform !== 'email' ? 'noopener noreferrer me' : undefined}
-                className="py-1 text-navy/80 hover:text-navy font-medium underline underline-offset-4 transition-colors"
+                className="group relative inline-flex items-center gap-1 py-1 text-navy/75 hover:text-navy font-mono text-xs font-semibold tracking-wider transition-all duration-200 hover:-translate-y-0.5"
               >
-                {s.label}
+                <span className="relative">
+                  {s.label}
+                  <span className="absolute left-0 -bottom-0.5 w-0 h-[2px] bg-navy group-hover:w-full transition-all duration-300 ease-out" />
+                </span>
+                <ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-1 translate-y-1 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 transition-all duration-200 text-yellow-hover shrink-0" />
               </a>
             ))}
             <span className="text-navy/30 hidden sm:inline">|</span>

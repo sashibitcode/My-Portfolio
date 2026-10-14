@@ -10,18 +10,10 @@ export const ResumeSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-6 pb-3 border-b border-navy/15">
-          <div>
-            <span className="font-mono text-xs font-bold text-navy/70 tracking-wider">
-              07 // Curriculum Vitae
-            </span>
-            <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold uppercase tracking-tight text-navy mt-1">
-              Resume
-            </h2>
-          </div>
-          <p className="text-sm font-sans text-navy/70 max-w-md">
-            Complete formal document containing academic milestones, technical projects, and contact credentials.
-          </p>
+        <div className="mb-6 pb-3 border-b border-navy/15">
+          <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold uppercase tracking-tight text-navy">
+            Resume
+          </h2>
         </div>
 
         {/* Flat White Surface Card */}

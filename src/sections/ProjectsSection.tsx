@@ -11,18 +11,10 @@ export const ProjectsSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12 pb-4 border-b border-navy/15">
-          <div>
-            <span className="font-mono text-xs font-bold text-navy/70 tracking-wider">
-              03 // Portfolio
-            </span>
-            <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-navy mt-1">
-              Featured Projects
-            </h2>
-          </div>
-          <p className="text-sm font-sans text-navy/70 max-w-md">
-            Verified analytics workflows covering retail metrics, sports statistics, and epidemiological time-series data.
-          </p>
+        <div className="mb-12 pb-4 border-b border-navy/15">
+          <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-navy">
+            Featured Projects
+          </h2>
         </div>
 
         {/* Flat White Cards Grid */}

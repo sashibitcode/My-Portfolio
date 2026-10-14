@@ -78,6 +78,73 @@ body {
   animation: heroCutoutFadeUp 0.6s ease-out forwards;
 }
 
+/* Success Pop Animation */
+@keyframes successPop {
+  0% {
+    opacity: 0;
+    transform: translateY(14px) scale(0.97);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-2px) scale(1.01);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-success-pop {
+  animation: successPop 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Checkmark Stroke Bounce */
+@keyframes checkmarkBounce {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.22);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-checkmark-bounce {
+  animation: checkmarkBounce 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* Confetti Burst Particles */
+@keyframes particleBurst {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--tx, 15px), var(--ty, -15px)) scale(0);
+    opacity: 0;
+  }
+}
+
+.animate-particle {
+  animation: particleBurst 0.75s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* Error Shake */
+@keyframes gentleShake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-4px); }
+  40%, 80% { transform: translateX(4px); }
+}
+
+.animate-shake {
+  animation: gentleShake 0.4s ease-in-out;
+}
+
 /* Transitions under 300ms */
 * {
   transition-duration: 200ms;
